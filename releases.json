@@ -29,10 +29,25 @@
       "sha256": "63c0cb4b724ddd67499985709437bce415ea265507b060982048eb3911b7fbfe",
       "sections": [
         {
-          "title": "Maintenance",
+          "title": "First public release",
           "items": [
             {
-              "title": "Record the first releases"
+              "title": "A pixel creature that lives on your desktop: naps on the Dock, hops onto windows, chases your cursor"
+            },
+            {
+              "title": "Grows from what you actually do: a sprout for the days you show up, traits it wears for your habits"
+            },
+            {
+              "title": "Dozens of pastimes and trait combos, from juggling to fishing off a window's edge"
+            },
+            {
+              "title": "Works alongside Claude Code, Codex, Gemini CLI and OpenCode: holds up a note when an agent needs you"
+            },
+            {
+              "title": "Calm by default: at most three nudges a day, quiet in meetings, focus and at night"
+            },
+            {
+              "title": "Private: notices that things happen, never what they were, and keeps it all on your Mac"
             }
           ]
         }
@@ -47,147 +62,10 @@
       "sha256": "3bad5dc66beb3ad0d5f1634eaef494ff5f15e0361ad8ce27fd169ba1e0d4e705",
       "sections": [
         {
-          "title": "New",
+          "title": "Test build",
           "items": [
             {
-              "title": "Add the tag-triggered release workflow and a release runbook"
-            },
-            {
-              "title": "Add Sparkle updates and a release lane ported from MenuKit"
-            },
-            {
-              "title": "Add nine pastimes, some tied to time, place and season"
-            },
-            {
-              "title": "Add seven traits and two combos"
-            },
-            {
-              "title": "Support Codex, Gemini CLI and OpenCode, installable from Settings"
-            },
-            {
-              "title": "Add combos, five pastimes, three traits and a status line"
-            },
-            {
-              "title": "Add four traits, three pastimes and three faces"
-            },
-            {
-              "title": "Add morning pick-3, just start, parking, small wins, a laptop"
-            },
-            {
-              "title": "Add heads-ups, water, Mac status and a settings card"
-            },
-            {
-              "title": "Add creature debug menu for interactions and events"
-            },
-            {
-              "title": "Add the nudge budget: calm, honest, derived from the log"
-            },
-            {
-              "title": "Add make install and an opt-in open-at-login toggle"
-            },
-            {
-              "title": "Add calendar quiet mode"
-            },
-            {
-              "title": "Add an event-sourced focus timer the Mote sits on"
-            },
-            {
-              "title": "Add PetCore v0.1 rules and drive the creature from mood"
-            }
-          ]
-        },
-        {
-          "title": "Maintenance",
-          "items": [
-            {
-              "title": "Make Zerre self-contained: copy MenuKit's UI components in"
-            },
-            {
-              "title": "Split the release token: publish to zerre, read menukit.app"
-            },
-            {
-              "title": "Read the Sparkle key from SPARKLE_PRIVATE_EDDSA_KEY_BASE64, raw or base64"
-            },
-            {
-              "title": "Set Zerre's Sparkle public key"
-            },
-            {
-              "title": "Use a ZerreNotary notarization profile"
-            },
-            {
-              "title": "Rename Mote to Zerre everywhere"
-            },
-            {
-              "title": "Reach windows from the sticky notes; hand activation over to the terminal"
-            },
-            {
-              "title": "Return to the terminal from Claude Code hooks; add \"Meeting's over\""
-            },
-            {
-              "title": "Get ready for meetings and hide at the left edge"
-            },
-            {
-              "title": "Grow a sprout, wear traits, play with frame animations"
-            },
-            {
-              "title": "Record that failed commands don't ring"
-            },
-            {
-              "title": "Carry deliveries in a backpack; ring for reminders"
-            },
-            {
-              "title": "Stay up yawning while you work, sleep when you stop"
-            },
-            {
-              "title": "Phrase sticky notes on-device; follow a moved board"
-            },
-            {
-              "title": "Stop the Mote sleepwalking"
-            },
-            {
-              "title": "Let a scoring brain pick the Mote's play"
-            },
-            {
-              "title": "Pin notes on a notice board the Mote carries them to"
-            },
-            {
-              "title": "Show and file deliveries from motectl and the debug menu"
-            },
-            {
-              "title": "Keep deliveries on a paper stack until handled"
-            },
-            {
-              "title": "Document Mote activity and Foundation Models ideas"
-            },
-            {
-              "title": "Let agent hooks return to their terminal"
-            },
-            {
-              "title": "Make motectl a live terminal companion"
-            },
-            {
-              "title": "Deliver Mote git hooks before they exit"
-            },
-            {
-              "title": "Make Mote standalone and draw the terminal trait"
-            },
-            {
-              "title": "Draw the v1 Mote and load art as data, sprite by sprite"
-            },
-            {
-              "title": "Let the Mote roam the desktop"
-            },
-            {
-              "title": "Serve the band's API from Mote and show MOTE on the wrist"
-            },
-            {
-              "title": "Hook Claude Code and git into Mote"
-            },
-            {
-              "title": "Render the creature with Metal and make it interactive"
-            },
-            {
-              "title": "Set up Mote: design docs, M0 spikes, Tuist skeleton"
+              "title": "A first run of the release pipeline: signing, notarization, updates and this page."
             }
           ]
         }
