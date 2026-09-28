@@ -1,7 +1,25 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.2.1",
+  "latest": "v0.3.0",
   "releases": [
+    {
+      "version": "0.3.0",
+      "tag": "v0.3.0",
+      "publishedAt": "2026-09-28T23:16:59Z",
+      "downloadURL": "https://github.com/darkbringer1/zerre/releases/download/v0.3.0/Zerre-0.3.0.dmg",
+      "releaseURL": "https://github.com/darkbringer1/zerre/releases/tag/v0.3.0",
+      "sha256": "3dc73838b60846709475cf0fd71ea0dd13a2fc4a3e4d7edad0ea770b9c169c37",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Add in-app feedback and a refined Zerre icon"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.2.1",
       "tag": "v0.2.1",
