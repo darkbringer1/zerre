@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges">
+  <!-- Zerre: a mint pixel creature with a sprout -->
+  <rect x="7" y="1" width="1" height="3" fill="#3E6B4E"/>
+  <rect x="5" y="1" width="2" height="1" fill="#8ED18F"/>
+  <rect x="8" y="0" width="2" height="2" fill="#8ED18F"/>
+  <rect x="5" y="4" width="6" height="1" fill="#2B3A42"/>
+  <rect x="3" y="5" width="2" height="1" fill="#2B3A42"/>
+  <rect x="11" y="5" width="2" height="1" fill="#2B3A42"/>
+  <rect x="2" y="6" width="1" height="6" fill="#2B3A42"/>
+  <rect x="13" y="6" width="1" height="6" fill="#2B3A42"/>
+  <rect x="3" y="12" width="10" height="1" fill="#2B3A42"/>
+  <rect x="5" y="5" width="6" height="1" fill="#D5F2DE"/>
+  <rect x="3" y="6" width="10" height="3" fill="#BDE7C9"/>
+  <rect x="4" y="6" width="3" height="1" fill="#F2FFF5"/>
+  <rect x="3" y="9" width="10" height="2" fill="#9FD8B2"/>
+  <rect x="3" y="11" width="10" height="1" fill="#7FBF98"/>
+  <rect x="5" y="7" width="1" height="2" fill="#2B3A42"/>
+  <rect x="10" y="7" width="1" height="2" fill="#2B3A42"/>
+  <rect x="7" y="10" width="2" height="1" fill="#2B3A42"/>
+  <rect x="4" y="13" width="2" height="1" fill="#5E9E7C"/>
+  <rect x="10" y="13" width="2" height="1" fill="#5E9E7C"/>
+</svg>

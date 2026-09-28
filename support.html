@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support — Zerre</title>
+  <meta name="description" content="Help for Zerre: setup, hooks, common issues, and how to remove everything.">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><img class="brand-mark" src="/assets/favicon.svg" alt="" width="28" height="28"> Zerre</a>
+    <span class="nav-spacer"></span>
+    <nav class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#download">Download</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container" style="padding:64px 24px 0;">
+
+<article class="prose">
+  <h1>Support</h1>
+  <p class="meta">Last updated: 2026-09-28</p>
+
+  <p class="lede">Something not right with your Zerre? Here's how to get help, and a few things worth knowing first.</p>
+
+  <h2>System requirements</h2>
+  <ul>
+    <li>macOS 26.0 or later</li>
+    <li>Apple Silicon (a Mac with an M-series chip)</li>
+    <li>Apple Intelligence is optional: with it, notes and the status line get fresh wording; without it, Zerre uses its own written lines</li>
+  </ul>
+
+  <h2>Getting started</h2>
+  <p>Zerre lives on your desktop and in the menu bar. Click the menu bar icon for its state card; open <strong>Settings…</strong> there to connect the tools you use (Claude Code, Codex, Gemini CLI, OpenCode, git, zsh), to turn on <strong>Open at login</strong>, and to adjust heads-ups and nudges. <strong>Connect Calendar</strong> on the card lets it stay quiet in meetings.</p>
+  <p>Right-click the creature for focus blocks and notes; triple-click it to write a note.</p>
+
+  <h2>Common issues</h2>
+
+  <h3>"Zerre can't be opened because it is from an unidentified developer"</h3>
+  <p>Gatekeeper didn't see the notarization ticket. The download is notarized and stapled; if this still appears, re-download it from the <a href="/releases">releases page</a> (the DMG may have been cut short), or run <code>xcrun stapler validate Zerre.app</code>.</p>
+
+  <h3>My agent finished but Zerre didn't notice</h3>
+  <p>Check <strong>Settings → Hooks</strong>: the agent should show <em>Remove</em> (installed). Agents only pick up new hooks in new sessions, so restart the agent after installing. OpenCode needs a restart to load its plugin.</p>
+
+  <h3>Clicking a note doesn't bring my terminal forward</h3>
+  <p>For Terminal and iTerm, allow Zerre under <strong>System Settings → Privacy &amp; Security → Automation</strong>. Other terminals (Warp, Ghostty, VS Code) come forward as an app; they don't let other apps pick a specific tab.</p>
+
+  <h3>It's hiding at the edge of the screen</h3>
+  <p>It hides during meetings. If the meeting ended early, click it and choose <strong>Meeting's over</strong>.</p>
+
+  <h2>Report a bug</h2>
+  <p>Email <a href="mailto:zerre@dogukaan.dev">zerre@dogukaan.dev</a> with your Zerre version, your macOS version and Mac model, and the steps to reproduce. Please don't send your event log or notes: they're not needed, and we don't want them.</p>
+
+  <h2>Updates</h2>
+  <p>Zerre checks for updates automatically through Sparkle, and you can check on demand from the menu bar card.</p>
+
+  <h2>Uninstall</h2>
+  <p>First remove the hooks you installed (<strong>Settings → Hooks → Remove</strong> for each), so your agents, git and zsh are exactly as they were. Then quit Zerre and delete it from Applications. To remove its data too, delete <code>~/Library/Application Support/Zerre</code> and <code>~/Library/Preferences/com.dogukaan.zerre.plist</code>.</p>
+
+  <div class="callout">
+    Zerre collects no data, so there is no account to delete and nothing to
+    request. Everything is on your Mac, in the folder above.
+  </div>
+</article>
+
+</main>
+
+<footer class="site">
+  <div class="container footer-inner">
+    <span>© 2026 Zerre. All rights reserved.</span>
+    <span>
+      <a href="/privacy">Privacy</a> ·
+      <a href="/support">Support</a> ·
+      <a href="/releases">Releases</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

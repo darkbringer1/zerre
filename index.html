@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zerre — a tiny creature that grows from your real life</title>
+  <meta name="description" content="Zerre is a pixel creature that lives on your Mac's desktop and grows from what you actually do: focus blocks, commits, coding agents, breaks, meetings. Calm by default, private by design.">
+  <meta property="og:title" content="Zerre">
+  <meta property="og:description" content="A tiny creature that lives on your desktop and grows from your real life. Calm, private, and a little bit alive.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zerre.dogukaan.dev">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <script src="/assets/site.js" defer></script>
+</head>
+<body>
+
+<!-- Iconoir icon sprite (MIT) — referenced via <use href="#ic-…"> -->
+<svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-download" viewBox="0 0 24 24"><path d="M6 20L18 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-arrow-right" viewBox="0 0 24 24"><path d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-code" viewBox="0 0 24 24"><path d="M13.5 6L10 18.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 8.5L3 12L6.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 8.5L21 12L17.5 15.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M5 18L3.13036 4.91253C3.05646 4.39524 3.39389 3.91247 3.90398 3.79912L11.5661 2.09641C11.8519 2.03291 12.1481 2.03291 12.4339 2.09641L20.096 3.79912C20.6061 3.91247 20.9435 4.39524 20.8696 4.91252L19 18C18.9293 18.495 18.5 21.5 12 21.5C5.5 21.5 5.07071 18.495 5 18Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-leaf" viewBox="0 0 24 24"><path d="M5.164 17C3.91 13.378 4.4 9.07 8.1 6.3 11.8 3.53 17.6 3.72 20 4c.4 3.6.2 9.6-3.2 12.6C13.4 19.6 8.9 19.3 5.164 17Zm0 0C8 12 11 9.5 15 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-moon" viewBox="0 0 24 24"><path d="M3 11.5066C3 16.7497 7.25034 21 12.4934 21C16.2209 21 19.4466 18.8518 21 15.7259C12.4934 15.7259 8.27411 11.5066 8.27411 3C5.14821 4.55344 3 7.77915 3 11.5066Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-sparks" viewBox="0 0 24 24"><path d="M12 3V5M12 19V21M3 12H5M19 12H21M5.6 5.6L7 7M17 17L18.4 18.4M5.6 18.4L7 17M17 7L18.4 5.6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/"><img class="brand-mark" src="/assets/favicon.svg" alt="" width="28" height="28"> Zerre</a>
+    <span class="nav-spacer"></span>
+    <nav class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#download">Download</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/support">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="hero container">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot pulse"></span> A desktop creature for macOS</div>
+    <h1>A tiny creature<br>that grows from <span class="grad">your real life</span>.</h1>
+    <p class="tagline">
+      Zerre lives on your desktop. It naps on the Dock, hops onto your windows,
+      chases your cursor, and grows from what you actually do: focus blocks,
+      commits, coding agents, breaks and meetings. Not a dashboard with a mascot.
+      A pet that becomes a little picture of your days.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" data-release-download href="/releases"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-download"/></svg> Download for Mac</a>
+      <a class="btn btn-secondary" href="#features">Meet it <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-arrow-right"/></svg></a>
+    </div>
+    <span class="spec-line">macOS 26.0 or later · Apple Silicon · free</span>
+
+    <div class="hero-facts">
+      <div><strong>0</strong> accounts</div>
+      <div><strong>0</strong> telemetry</div>
+      <div><strong>3</strong> nudges a day, at most</div>
+    </div>
+  </div>
+
+  <div class="hero-shot hero-pixel">
+    <img src="/assets/zerre-hero.png" alt="Zerre, a small mint-green pixel creature with a sprout on its head, wearing headphones and holding a tiny terminal" width="768" height="768" loading="eager">
+  </div>
+</section>
+
+<!-- Features -->
+<section class="block container" id="features">
+  <div class="section-head">
+    <div class="eyebrow">What it does</div>
+    <h2>Alive, calm, and fed by your day</h2>
+    <p><em>Zerre</em> is Turkish for a mote, a speck. It starts as one, and grows.</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-leaf"/></svg> It grows with you</h3>
+      <p>A sprout on its head grows with the days you show up and never shrinks. Habits you keep for a week become <strong>traits</strong> it wears: headphones for deep focus, a rocket badge for shipping, a nightcap for late nights, a bento box for real lunch breaks. When a habit fades, so does the trait. Nothing is lost for good, and nothing punishes you.</p>
+    </div>
+    <div class="card">
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-code"/></svg> It works alongside you</h3>
+      <p>Hooks for <strong>Claude Code, Codex, Gemini CLI and OpenCode</strong>, git and long terminal commands. When an agent finishes or needs you, Zerre holds up a note and keeps it in its backpack until you look. Click the note to go straight back to that terminal.</p>
+    </div>
+    <div class="card">
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-moon"/></svg> Calm by default</h3>
+      <p>At most three gentle nudges a day, never the same one twice in a row, and none during meetings, focus blocks or the night. It gets ready before your meetings and hides at the edge of the screen while they run. Neglect makes it sleepy, never sad.</p>
+    </div>
+    <div class="card">
+      <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-sparks"/></svg> A lot of tiny life</h3>
+      <p>Dozens of pastimes: juggling, jump rope, a paper plane, a bird on its sprout, tea in the afternoon, fishing off a window's edge, a snowman in winter. Pair two traits and it discovers combos. Pet it, poke it, drag it around. It has opinions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Download -->
+<section class="block container" id="download">
+  <div class="section-head">
+    <div class="eyebrow">Get it</div>
+    <h2>Download</h2>
+    <p>A direct download, signed with Developer ID, notarized by Apple, and updated through Sparkle.</p>
+  </div>
+  <div class="card card-featured">
+    <h3><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-download"/></svg> Zerre for Mac</h3>
+    <p>Drag it to Applications, open it, and it walks onto your desktop. Connect the tools you use from Settings, whenever you like.</p>
+    <div class="cta-row" style="margin-top:16px;">
+      <a class="btn btn-primary" data-release-download href="/releases">Get the latest DMG</a>
+      <a class="btn btn-secondary" href="/releases">All releases</a>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:24px;">
+    <strong>Verify the download.</strong> macOS checks the notarization on first launch. To verify it yourself:
+    <code>spctl --assess --type open --context context:primary-signature -vv Zerre.dmg</code>
+  </div>
+</section>
+
+<!-- Privacy teaser -->
+<section class="block container">
+  <div class="section-head">
+    <div class="eyebrow">Privacy</div>
+    <h2>It notices, it doesn't read</h2>
+    <p>Zerre knows <em>that</em> something happened, never <em>what</em> it was: an agent finished in a folder, a command ran for four minutes, you were busy from two to three. No prompts, no code, no meeting titles, no keystrokes. Everything stays on your Mac, with no accounts, analytics or tracking.</p>
+  </div>
+  <a class="btn btn-secondary" href="/privacy"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-shield"/></svg> Read the privacy policy</a>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="container footer-inner">
+    <span>© 2026 Zerre. All rights reserved.</span>
+    <span>
+      <a href="/privacy">Privacy</a> ·
+      <a href="/support">Support</a> ·
+      <a href="/releases">Releases</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
