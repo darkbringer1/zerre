@@ -27,7 +27,7 @@
 
 <article class="prose">
   <h1>Support</h1>
-  <p class="meta">Last updated: 2026-09-28</p>
+  <p class="meta">Last updated: 2026-09-29</p>
 
   <p class="lede">Something not right with your Zerre? Here's how to get help, and a few things worth knowing first.</p>
 
@@ -62,8 +62,12 @@
   <h2>Updates</h2>
   <p>Zerre checks for updates automatically through Sparkle, and you can check on demand from the menu bar card.</p>
 
+  <h2>Your data</h2>
+  <p>Everything Zerre notices stays on your Mac. <strong>Settings → Your data</strong> can export it all as JSON, or erase it so Zerre starts over as a tiny sprout (your hooks and settings stay).</p>
+
   <h2>Uninstall</h2>
-  <p>First remove the hooks you installed (<strong>Settings → Hooks → Remove</strong> for each), so your agents, git and zsh are exactly as they were. Then quit Zerre and delete it from Applications. To remove its data too, delete <code>~/Library/Application Support/Zerre</code> and <code>~/Library/Preferences/com.dogukaan.zerre.plist</code>.</p>
+  <p>Open <strong>Settings → Your data → Remove Zerre from this Mac</strong>. It removes its hooks from your coding agents, git and zsh (your own hooks stay exactly as they were), turns off Open at login, deletes its data and settings, and quits. Then drag Zerre from Applications to the Trash.</p>
+  <p>If you've already deleted the app: remove its hooks by hand (entries mentioning <code>Zerre/bin/zerrectl</code>, and the <code># zerre-hook</code> block in <code>~/.zshrc</code>), run <code>git config --global --unset core.hooksPath</code> if it points into Zerre's folder, then delete <code>~/Library/Application Support/Zerre</code> and <code>~/Library/Preferences/com.dogukaan.zerre.plist</code>.</p>
 
   <div class="callout">
     Zerre collects no data, so there is no account to delete and nothing to
