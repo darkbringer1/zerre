@@ -1,7 +1,28 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.2.0",
+  "latest": "v0.2.1",
   "releases": [
+    {
+      "version": "0.2.1",
+      "tag": "v0.2.1",
+      "publishedAt": "2026-09-28T22:59:42Z",
+      "downloadURL": "https://github.com/darkbringer1/zerre/releases/download/v0.2.1/Zerre-0.2.1.dmg",
+      "releaseURL": "https://github.com/darkbringer1/zerre/releases/tag/v0.2.1",
+      "sha256": "077c0a617a5d294c1d192b503786cc71003d10fd7701a86e8bbb1e82b056c217",
+      "sections": [
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Ignore Python bytecode"
+            },
+            {
+              "title": "Welcome: say what Zerre means without the old name"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.2.0",
       "tag": "v0.2.0",
