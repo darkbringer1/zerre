@@ -2,5 +2,13 @@
 <rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
         <title>Zerre</title>
+        <item>
+            <title>0.0.1</title>
+            <pubDate>Mon, 28 Sep 2026 22:22:15 +0000</pubDate>
+            <sparkle:version>45</sparkle:version>
+            <sparkle:shortVersionString>0.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/darkbringer1/zerre/releases/download/v0.0.1/Zerre-0.0.1.dmg" length="7889065" type="application/octet-stream" sparkle:edSignature="RUH5E9zzb9pJkckygjJn75ay1SQmJOi4tEZ/s4yWA+9EmxpPf+7HH4JZu6TaABgHHt1kiOR8P+ftxwHF24NNBg=="/>
+        </item>
     </channel>
 </rss>
