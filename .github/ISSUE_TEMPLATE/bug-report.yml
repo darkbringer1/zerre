@@ -1,0 +1,40 @@
+name: Bug report
+description: Report something in Zerre that did not work as expected.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for the report. Please remove private prompts, project names, notes, and personal information from screenshots."
+  - type: input
+    id: version
+    attributes:
+      label: Zerre version
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: mac
+    attributes:
+      label: macOS version and Mac model
+      placeholder: macOS 26, MacBook Pro with M-series chip
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: 1. Connect the Codex hook...\n2. Finish a turn...\n3. Zerre...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead?
+    validations:
+      required: true

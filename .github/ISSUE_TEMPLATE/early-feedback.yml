@@ -1,0 +1,50 @@
+name: Early feedback
+description: Tell us what felt delightful, distracting, or confusing while using Zerre.
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for trying Zerre. Please remove private prompts, project names, and personal information from any screenshots."
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of feedback is this?
+      options:
+        - Something I liked
+        - Something confusing
+        - Something distracting
+        - An idea
+    validations:
+      required: true
+  - type: textarea
+    id: moment
+    attributes:
+      label: What happened?
+      description: A specific moment helps us understand the experience.
+      placeholder: I connected Codex and, when it finished a turn, Zerre...
+    validations:
+      required: true
+  - type: textarea
+    id: expectation
+    attributes:
+      label: What did you expect or want instead?
+    validations:
+      required: false
+  - type: dropdown
+    id: keep-running
+    attributes:
+      label: Would you keep Zerre running for a few days?
+      options:
+        - Yes
+        - Maybe
+        - No
+        - I just installed it
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Mac and tool context (optional)
+      placeholder: macOS 26, Claude Code
+    validations:
+      required: false
