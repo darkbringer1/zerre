@@ -3,22 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Not found — Zerre</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <meta name="theme-color" content="#f5f0e4">
+  <title>Page not found — Zerre</title>
+  <meta name="description" content="This page wandered off. Find your way back to Zerre.">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/playground.css">
+  <link rel="stylesheet" href="/assets/inner-pages.css">
 </head>
-<body>
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="/"><img class="brand-mark" src="/assets/favicon.svg" alt="" width="28" height="28"> Zerre</a>
+<body class="inner-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/" aria-label="Zerre home"><img src="/assets/favicon.svg" alt="" width="34" height="34"> <span>zerre<span class="wordmark-dot">.</span></span></a>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <a href="/#meet">Meet Zerre</a><a href="/releases" data-page="releases">Releases</a><a href="/privacy" data-page="privacy">Privacy</a><a href="/support" data-page="support">Support</a>
+    </nav>
+    <a class="header-download" href="/#download">Get Zerre <span aria-hidden="true">↗</span></a>
   </div>
 </header>
-<main class="container" style="padding:96px 24px;">
-  <article class="prose">
-    <h1>Nothing here</h1>
-    <p class="lede">Zerre wandered off looking for this page and came back with a pebble instead.</p>
-    <p><a class="btn btn-primary" href="/">Back home</a></p>
-  </article>
+<main id="main">
+<section class="not-found-main"><div class="wrap not-found-card"><div><div class="section-label"><span class="label-number">404 /</span> WANDERED OFF</div><h1>404</h1><h2>Nothing lives here. <em>Yet.</em></h2><p>Zerre wandered off looking for this page and came back with a pebble instead.</p><a class="button button-primary" href="/">Head back home <span aria-hidden="true">↗</span></a></div><div class="not-found-art" aria-hidden="true"><img src="/assets/zerre-hero.png" alt="" width="768" height="768"></div></div></section>
 </main>
+<footer class="site-footer"><div class="wrap footer-grid"><div><a class="wordmark" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"> <span>zerre<span class="wordmark-dot">.</span></span></a><p>A little life on your desktop.</p></div><nav aria-label="Footer navigation"><a href="/releases">Releases</a><a href="/privacy">Privacy</a><a href="/support">Support</a><a href="https://github.com/darkbringer1/zerre/issues">Feedback</a></nav><span class="footer-end">© 2026 Zerre. Made with care for curious Mac people.</span></div></footer>
 </body>
 </html>
