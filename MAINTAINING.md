@@ -8,6 +8,7 @@ This repository hosts Zerre's public website (GitHub Pages, https://zerre.doguka
 - `assets/playground.css` supplies the shared visual language; `assets/inner-pages.css` styles Support, Privacy, Releases, and the 404 page. `assets/playground.js` powers the landing page's interactive desktop scene. The scene is an illustration built with Zerre's real pixel art; it is not an app screenshot.
 - `assets/zerre-social.svg` is the editable 1200 × 630 social link card; `assets/zerre-social.png` is the raster preview used by the homepage's social metadata.
 - `releases.html`, `releases.json`, `appcast.xml`: written by the release workflow on every release (don't edit by hand)
+- `assets/sprites/`: Zerre's pixel art, composed from the app's sprites by `make site-art SITE=<this checkout>` in the app repo (don't edit by hand; redraw in the app and re-run). Show them at whole-number scales with `image-rendering: pixelated`. `zerre-hero.png` is the older flattened hero, kept for links that point at it.
 - `install.sh`: the one-line installer (`curl -fsSL https://zerre.dogukaan.dev/install.sh | sh`). It reads the latest release from `releases.json`, checks the DMG's SHA-256, the Developer ID team and Gatekeeper, then installs. Keep `releases.json`'s shape (`releases[0].version`, `.downloadURL`, `.sha256`) or update the script with it.
 - The Homebrew cask lives in [darkbringer1/homebrew-tap](https://github.com/darkbringer1/homebrew-tap); the release workflow bumps its version and checksum.
 
@@ -23,6 +24,7 @@ The site uses no separate analytics provider or external tracking script. Cloudf
 | --- | --- |
 | Download button clicks | `/assets/analytics/click-download.txt` |
 | Feedback link clicks | `/assets/analytics/click-feedback.txt` |
+| Install command copies (Homebrew, one-line script) | `/assets/analytics/click-copy-brew.txt`, `/assets/analytics/click-copy-script.txt` |
 | People reaching the download section | `/assets/analytics/section-download.txt` |
 | English LinkedIn announcement arrivals | `/assets/analytics/source-linkedin-en.txt` |
 | Turkish LinkedIn announcement arrivals | `/assets/analytics/source-linkedin-tr.txt` |

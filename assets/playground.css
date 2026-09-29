@@ -1779,3 +1779,373 @@ h1 em,h2 em {
   }
 
 }
+
+/* Zerre's own pixel art (assets/sprites, composed from the app's sprites by the app repo's
+   scripts/art/site_art.py). Always whole-number scales, never smoothed. */
+img[src^="/assets/sprites/"] {
+  image-rendering:pixelated;
+  max-width:none
+}
+
+.pixel-creature .pose-blink {
+  position:absolute;
+  left:0;
+  top:0;
+  opacity:0;
+  animation:blink 5.2s steps(1) infinite
+}
+
+.pixel-creature .pose-blink[hidden] {
+  display:none
+}
+
+@keyframes blink {
+  0%,93.5%,100% { opacity:0 }
+  94% { opacity:1 }
+  96.5% { opacity:0 }
+}
+
+.star {
+  font-size:0
+}
+
+.ground-sprout {
+  align-self:end;
+  margin-bottom:-2px
+}
+
+.desktop-creature {
+  width:340px;
+  right:96px;
+  bottom:48px;
+  animation:pixel-bob 3.7s steps(2) infinite
+}
+
+.desktop-creature img {
+  width:340px;
+  height:320px;
+  filter:none
+}
+
+.desktop.is-reacting .desktop-creature {
+  animation:pixel-hop .5s steps(3)
+}
+
+@keyframes pixel-bob {
+  50% { transform:translateY(-5px) }
+}
+
+@keyframes pixel-hop {
+  40% { transform:translateY(-15px) }
+}
+
+.ticker-track b {
+  display:inline-flex;
+  align-items:center
+}
+
+.postcard-symbol {
+  height:128px;
+  display:flex;
+  justify-content:flex-end;
+  align-items:flex-end;
+  padding-top:0
+}
+
+.step-terminal {
+  filter:drop-shadow(5px 5px 0 #ddae82)
+}
+
+.step-spark {
+  top:14px;
+  right:24px;
+  font-size:0
+}
+
+.step-spark-small {
+  top:auto;
+  bottom:22px;
+  right:auto;
+  left:30px
+}
+
+.step-art-grow {
+  align-items:flex-end;
+  justify-content:center;
+  padding-bottom:22px;
+  gap:6px
+}
+
+.step-art-note {
+  align-items:end
+}
+
+.step-art-note img {
+  align-self:end;
+  margin-bottom:-2px
+}
+
+.traits-strip {
+  margin-top:44px;
+  padding:26px 28px;
+  border:2px solid #5c8068;
+  border-radius:12px;
+  background:#f6f3e3;
+  box-shadow:5px 5px 0 #a8c9a4
+}
+
+.traits-label {
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.16em;
+  color:#557661
+}
+
+.traits-strip ul {
+  list-style:none;
+  margin:20px 0 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+  gap:22px 18px
+}
+
+.traits-strip li {
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  font-size:12px;
+  color:#56675a
+}
+
+.traits-strip li strong {
+  font-family:var(--serif);
+  font-size:16px;
+  color:var(--ink)
+}
+
+.trait-art {
+  height:64px;
+  display:flex;
+  align-items:flex-end;
+  margin-bottom:8px
+}
+
+.traits-strip p {
+  margin:20px 0 0;
+  font-size:12px;
+  color:#6c7b6f
+}
+
+.quiet-creature {
+  position:absolute;
+  z-index:2;
+  right:44px;
+  bottom:34px
+}
+
+.quiet-small-window {
+  z-index:3;
+  left:34%
+}
+
+.privacy-stamp b {
+  margin-top:14px
+}
+
+.download-creature {
+  transform:none
+}
+
+.download-creature img {
+  width:272px;
+  height:256px;
+  max-height:none;
+  filter:none
+}
+
+.download-doodle {
+  font-size:0
+}
+
+.feedback-star {
+  font-size:0;
+  transform:rotate(-6deg)
+}
+
+.download-card > div {
+  min-width:0
+}
+
+.install-box {
+  margin-top:26px;
+  max-width:min(520px,100%);
+  border:2px solid #243d33;
+  border-radius:10px;
+  background:#142a32;
+  color:#d7efe0;
+  box-shadow:5px 5px 0 #b59a5e;
+  overflow:hidden
+}
+
+.install-bar {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 12px;
+  background:#233f45;
+  color:#9fc4b0;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.06em
+}
+
+.install-bar .traffic {
+  display:flex;
+  gap:5px
+}
+
+.install-bar .traffic i {
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#56736a
+}
+
+.install-tabs {
+  display:flex;
+  gap:4px;
+  padding:12px 14px 0
+}
+
+.install-tabs button {
+  padding:6px 11px;
+  border:1.5px solid #3f6a5d;
+  border-radius:6px;
+  background:transparent;
+  color:#9fc4b0;
+  font:inherit;
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer
+}
+
+.install-tabs button[aria-selected="true"] {
+  background:#9ae9b8;
+  border-color:#9ae9b8;
+  color:#142a32
+}
+
+.install-tabs button:focus-visible,.install-copy:focus-visible {
+  outline:2px solid #ffe680;
+  outline-offset:2px
+}
+
+.install-panel {
+  padding:12px 14px 14px
+}
+
+.install-command {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:11px 12px;
+  border-radius:7px;
+  background:#0d1f25
+}
+
+.install-command .terminal-prompt {
+  color:#e9b087
+}
+
+.install-command code {
+  flex:1;
+  min-width:0;
+  overflow-x:auto;
+  white-space:nowrap;
+  color:#9ae9b8;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:13px;
+  scrollbar-width:none
+}
+
+.install-copy {
+  flex:none;
+  padding:5px 10px;
+  border:1.5px solid #9ae9b8;
+  border-radius:6px;
+  background:transparent;
+  color:#9ae9b8;
+  font:inherit;
+  font-size:11px;
+  font-weight:700;
+  cursor:pointer
+}
+
+.install-copy:hover {
+  background:#9ae9b822
+}
+
+.install-note {
+  margin:10px 2px 0!important;
+  font-size:12px;
+  color:#9fc4b0!important
+}
+
+.install-note code {
+  color:#d7efe0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace
+}
+
+@media(max-width:1000px) {
+  .desktop-creature {
+    width:272px;
+    bottom:69px
+  }
+
+  .desktop-creature img {
+    width:272px;
+    height:256px
+  }
+}
+
+@media(max-width:720px) {
+  .postcard-symbol {
+    height:128px
+  }
+
+  .download-creature img {
+    width:204px;
+    height:192px
+  }
+}
+
+@media(max-width:460px) {
+  .desktop-creature {
+    width:204px;
+    right:52px;
+    bottom:73px
+  }
+
+  .desktop-creature img {
+    width:204px;
+    height:192px
+  }
+
+  .quiet-creature {
+    width:114px;
+    height:96px;
+    right:20px;
+    bottom:24px
+  }
+
+  .quiet-small-window {
+    left:40%
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .pixel-creature .pose-blink,.desktop-creature,.desktop.is-reacting .desktop-creature {
+    animation:none
+  }
+}

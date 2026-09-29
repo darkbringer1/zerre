@@ -121,3 +121,11 @@ body.inner-page { background:#fffaf0; }
   .document th,.document td { min-width:150px; padding:11px; }
   .release-card .button { width:100%; }
 }
+
+/* Zerre's own pixel art (assets/sprites): whole-number scales, never smoothed or rotated. */
+.art-window-content .pixel-creature { position:relative; display:block; }
+.art-window-content img[src^="/assets/sprites/"] { width:204px; height:192px; filter:none; }
+.not-found-art:has(img[src^="/assets/sprites/"]) { width:auto; transform:none; }
+.not-found-art img[src^="/assets/sprites/"] { width:200px; height:240px; }
+.document pre { margin:12px 0 18px; padding:14px 16px; overflow-x:auto; border-radius:8px; background:#142a32; box-shadow:4px 4px 0 #cfdcc5; }
+.document pre code { padding:0; background:none; color:#9ae9b8; font-size:13.5px; overflow-wrap:normal; white-space:pre; }

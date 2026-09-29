@@ -13,6 +13,8 @@
     'click-demo-agent',
     'click-demo-commit',
     'click-demo-focus',
+    'click-copy-brew',
+    'click-copy-script',
     'section-hero',
     'section-meet',
     'section-how-it-works',
@@ -32,6 +34,8 @@
       keepalive: true
     }).catch(() => {});
   }
+
+  window.zerreCount = count;
 
   if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
     const params = new URLSearchParams(window.location.search);
