@@ -19,7 +19,9 @@
     'section-calm',
     'section-privacy',
     'section-download',
-    'section-feedback'
+    'section-feedback',
+    'source-linkedin-en',
+    'source-linkedin-tr'
   ]);
 
   function count(eventName) {
@@ -29,6 +31,16 @@
       credentials: 'omit',
       keepalive: true
     }).catch(() => {});
+  }
+
+  if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('utm_source') === 'linkedin' &&
+        params.get('utm_campaign') === 'zerre_launch') {
+      const language = params.get('utm_content');
+      if (language === 'en_announcement') count('source-linkedin-en');
+      if (language === 'tr_announcement') count('source-linkedin-tr');
+    }
   }
 
   document.addEventListener('click', (event) => {
