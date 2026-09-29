@@ -12,3 +12,18 @@ This repository hosts Zerre's public website (GitHub Pages) and its signed, nota
 - `releases.html`, `releases.json`, `appcast.xml`: written by the release workflow on every release (don't edit by hand)
 
 The app release workflow replaces the `RELEASE_LATEST` block in `index.html` and updates links marked `data-release-download`. Keep those markers when editing the homepage.
+
+## Website traffic in Cloudflare
+
+The site uses no analytics service or external tracking script. Cloudflare can count its normal page requests only when the `zerre.dogukaan.dev` DNS record is **Proxied** (orange cloud). In the Cloudflare dashboard, open **dogukaan.dev → Analytics & Logs → HTTP Traffic**, filter **Host** to `zerre.dogukaan.dev`, then use **Path** to look at `/`, `/privacy`, `/support`, and `/releases`. The GitHub Pages origin may serve pretty URLs with or without `.html`; check both forms if a page looks empty.
+
+`assets/analytics.js` sends a small first-party request when a homepage heading is at least half visible or someone clicks a key link or demo button. The files in `assets/analytics/` exist only so those requests return 200. Filter HTTP Traffic by **Path** and use **Requests** to count an event:
+
+| What to inspect | Path |
+| --- | --- |
+| Download button clicks | `/assets/analytics/click-download.txt` |
+| Feedback link clicks | `/assets/analytics/click-feedback.txt` |
+| People reaching the download section | `/assets/analytics/section-download.txt` |
+| Other homepage sections and clicks | `/assets/analytics/section-*.txt` and `/assets/analytics/click-*.txt` |
+
+The exact path filters work on the Free plan. Section counts are approximate exposure, not eye tracking. Click counts are browser requests, not completed downloads. For ordinary page traffic, exclude `/assets/analytics/` and other static assets from the request count. No cookies or persistent visitor IDs are created by the site script. The [privacy page](privacy.html) describes the website counts separately from the app's local data.

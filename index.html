@@ -18,6 +18,7 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/playground.css">
   <script src="/assets/playground.js" defer></script>
+  <script src="/assets/analytics.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,7 +42,7 @@
       <div class="wrap hero-layout">
         <div class="hero-copy">
           <div class="pill"><span class="pill-light"></span> Now living on macOS 26+</div>
-          <h1 id="hero-title">Your workday has a <em>little life</em> of its own.</h1>
+          <h1 id="hero-title" data-analytics-section="hero">Your workday has a <em>little life</em> of its own.</h1>
           <p class="hero-lede">Meet Zerre, a tiny creature who lives on your Mac. It notices agent handoffs, commits and focus time, then turns the rhythm of your day into a character that feels like yours.</p>
           <div class="hero-actions">
             <a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.4.0/Zerre-0.4.0.dmg">Download for Mac <span aria-hidden="true">↗</span></a>
@@ -80,7 +81,7 @@
     <section class="intro-section section-pad" id="meet" aria-labelledby="meet-title">
       <div class="wrap intro-grid">
         <div class="section-label"><span class="label-number">01 /</span> MEET YOUR NEW DESKTOP NEIGHBOR</div>
-        <div><h2 id="meet-title">Somewhere between a pet, a tiny witness, and a good reason to smile at your screen.</h2><p>Zerre wanders, naps on the Dock, watches the cursor and reacts when you interact with it. It has moods and little habits of its own. The more days you spend together, the more your patterns show up in how it looks.</p><p class="intro-aside">Zerre means <em>“speck”</em>, a tiny particle, in Turkish. Small things can grow.</p></div>
+        <div><h2 id="meet-title" data-analytics-section="meet">Somewhere between a pet, a tiny witness, and a good reason to smile at your screen.</h2><p>Zerre wanders, naps on the Dock, watches the cursor and reacts when you interact with it. It has moods and little habits of its own. The more days you spend together, the more your patterns show up in how it looks.</p><p class="intro-aside">Zerre means <em>“speck”</em>, a tiny particle, in Turkish. Small things can grow.</p></div>
       </div>
       <div class="wrap postcard-row" aria-label="A few Zerre moments">
         <article class="postcard postcard-yellow"><span class="postcard-top">01 · HELLO THERE</span><span class="postcard-symbol" aria-hidden="true">◉</span><h3>It follows your cursor.</h3><p>A little curiosity, right on your desktop.</p></article>
@@ -92,7 +93,7 @@
     <section class="story-section section-pad" id="how-it-works" aria-labelledby="story-title">
       <div class="wrap">
         <div class="section-label"><span class="label-number">02 /</span> HOW IT WORKS</div>
-        <div class="story-heading"><h2 id="story-title">You do your thing.<br><em>Zerre does its little thing.</em></h2><p>Connect only the tools you want. Tiny event signals shape Zerre over time. You get a companion with a memory of your days, without another chore to maintain.</p></div>
+        <div class="story-heading"><h2 id="story-title" data-analytics-section="how_it_works">You do your thing.<br><em>Zerre does its little thing.</em></h2><p>Connect only the tools you want. Tiny event signals shape Zerre over time. You get a companion with a memory of your days, without another chore to maintain.</p></div>
         <div class="story-steps">
           <div class="story-step"><span class="step-no">1</span><div><span class="step-eyebrow">A SIGNAL</span><h3>Your agent finishes.</h3><p>Claude Code, Codex, Gemini CLI and OpenCode can tell Zerre when a turn ends or needs you.</p></div><div class="step-art step-art-agent" aria-hidden="true"><span class="step-bubble">done ✓</span><span class="step-spark">✳</span></div></div>
           <div class="story-step"><span class="step-no">2</span><div><span class="step-eyebrow">A REACTION</span><h3>Zerre notices.</h3><p>It holds up a little note. Click it to return to the terminal when the return path is available.</p></div><div class="step-art step-art-note" aria-hidden="true"><span class="mini-note">for you!<br>↘</span></div></div>
@@ -103,12 +104,12 @@
     </section>
 
     <section class="quiet-section section-pad" aria-labelledby="quiet-title">
-      <div class="wrap quiet-grid"><div class="quiet-illustration" aria-hidden="true"><div class="quiet-moon">☾</div><div class="quiet-cloud quiet-cloud-one"></div><div class="quiet-cloud quiet-cloud-two"></div><div class="quiet-small-window">meeting in progress <span>zzz</span></div></div><div class="quiet-copy"><div class="section-label"><span class="label-number">03 /</span> CALM BY DEFAULT</div><h2 id="quiet-title">A companion that knows when to <em>hush.</em></h2><p>Zerre has a small daily nudge budget. It stays quiet during focus time, at night, and during meetings when you connect Calendar. Ignore it for a while and it gets sleepy, never punishing.</p><a class="inline-link" href="/privacy">See exactly what it notices <span aria-hidden="true">↗</span></a></div></div>
+      <div class="wrap quiet-grid"><div class="quiet-illustration" aria-hidden="true"><div class="quiet-moon">☾</div><div class="quiet-cloud quiet-cloud-one"></div><div class="quiet-cloud quiet-cloud-two"></div><div class="quiet-small-window">meeting in progress <span>zzz</span></div></div><div class="quiet-copy"><div class="section-label"><span class="label-number">03 /</span> CALM BY DEFAULT</div><h2 id="quiet-title" data-analytics-section="calm">A companion that knows when to <em>hush.</em></h2><p>Zerre has a small daily nudge budget. It stays quiet during focus time, at night, and during meetings when you connect Calendar. Ignore it for a while and it gets sleepy, never punishing.</p><a class="inline-link" href="/privacy">See exactly what it notices <span aria-hidden="true">↗</span></a></div></div>
     </section>
 
-    <section class="privacy-section section-pad" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div class="privacy-stamp" aria-hidden="true"><span>YOUR MAC<br>YOUR LITTLE WORLD</span><b>◎</b></div><div><div class="section-label"><span class="label-number">04 /</span> MADE TO STAY YOURS</div><h2 id="privacy-title">It notices that things happened. <em>It does not read your work.</em></h2><p>Agent hooks tell Zerre about handoffs, not prompts or code. Calendar access, if you grant it, tells Zerre when you're busy, not what the meeting is. Its history stays on your Mac. No account, no analytics, no tracking.</p><p class="privacy-fine">Notes you choose to write on Zerre's board are saved locally so it can show them again.</p><a class="inline-link" href="/privacy">Read the full privacy details <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="privacy-section section-pad" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div class="privacy-stamp" aria-hidden="true"><span>YOUR MAC<br>YOUR LITTLE WORLD</span><b>◎</b></div><div><div class="section-label"><span class="label-number">04 /</span> MADE TO STAY YOURS</div><h2 id="privacy-title" data-analytics-section="privacy">It notices that things happened. <em>It does not read your work.</em></h2><p>Agent hooks tell Zerre about handoffs, not prompts or code. Calendar access, if you grant it, tells Zerre when you're busy, not what the meeting is. Its history stays on your Mac. The app has no account or usage telemetry. This website counts visits and a few clicks; the details are on the privacy page.</p><p class="privacy-fine">Notes you choose to write on Zerre's board are saved locally so it can show them again.</p><a class="inline-link" href="/privacy">Read the full privacy details <span aria-hidden="true">↗</span></a></div></div></section>
 
-    <section class="download-section section-pad" id="download" aria-labelledby="download-title"><div class="wrap download-card"><div class="download-doodle" aria-hidden="true">✳</div><div><div class="section-label"><span class="label-number">05 /</span> YOUR DESKTOP IS WAITING</div><h2 id="download-title">Make a little room for Zerre.</h2><p>Zerre for Mac is ready. Download it, connect a tool or two, and see what kind of little companion grows beside you.</p><div class="download-actions"><a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.4.0/Zerre-0.4.0.dmg">Download Zerre <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/releases">Release notes</a></div><p class="download-meta">macOS 26+ · Apple silicon · Signed and notarized · Sparkle updates</p></div><div class="download-creature" aria-hidden="true"><img src="/assets/zerre-hero.png" alt="" width="768" height="768"></div></div></section>
+    <section class="download-section section-pad" id="download" aria-labelledby="download-title"><div class="wrap download-card"><div class="download-doodle" aria-hidden="true">✳</div><div><div class="section-label"><span class="label-number">05 /</span> YOUR DESKTOP IS WAITING</div><h2 id="download-title" data-analytics-section="download">Make a little room for Zerre.</h2><p>Zerre for Mac is ready. Download it, connect a tool or two, and see what kind of little companion grows beside you.</p><div class="download-actions"><a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.4.0/Zerre-0.4.0.dmg">Download Zerre <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/releases">Release notes</a></div><p class="download-meta">macOS 26+ · Apple silicon · Signed and notarized · Sparkle updates</p></div><div class="download-creature" aria-hidden="true"><img src="/assets/zerre-hero.png" alt="" width="768" height="768"></div></div></section>
 
     <!-- RELEASE_LATEST_START -->
 <section class="block container" id="latest-release">
@@ -133,7 +134,7 @@
 </section>
 <!-- RELEASE_LATEST_END -->
 
-    <section class="feedback-section" aria-labelledby="feedback-title"><div class="wrap feedback-inner"><span class="feedback-star" aria-hidden="true">✳</span><div><h2 id="feedback-title">Help this little thing grow.</h2><p>Tried Zerre? Tell me what felt delightful, distracting or confusing. Early feedback will shape what comes next.</p></div><a class="button button-outline" href="https://github.com/darkbringer1/zerre/issues/new/choose">Share feedback <span aria-hidden="true">↗</span></a></div></section>
+    <section class="feedback-section" aria-labelledby="feedback-title"><div class="wrap feedback-inner"><span class="feedback-star" aria-hidden="true">✳</span><div><h2 id="feedback-title" data-analytics-section="feedback">Help this little thing grow.</h2><p>Tried Zerre? Tell me what felt delightful, distracting or confusing. Early feedback will shape what comes next.</p></div><a class="button button-outline" href="https://github.com/darkbringer1/zerre/issues/new/choose">Share feedback <span aria-hidden="true">↗</span></a></div></section>
   </main>
 
   <footer class="site-footer"><div class="wrap footer-grid"><div><a class="wordmark" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"> <span>zerre<span class="wordmark-dot">.</span></span></a><p>A little life on your desktop.</p></div><nav aria-label="Footer navigation"><a href="/releases">Releases</a><a href="/privacy">Privacy</a><a href="/support">Support</a><a href="https://github.com/darkbringer1/zerre/issues">Feedback</a></nav><span class="footer-end">© 2026 Zerre. Made with care for curious Mac people.</span></div></footer>
