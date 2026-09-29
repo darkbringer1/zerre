@@ -8,6 +8,7 @@ This repository hosts Zerre's public website (GitHub Pages) and its signed, nota
 
 - `index.html`, `privacy.html`, `support.html`, `404.html`: the site
 - `assets/playground.css` supplies the shared visual language; `assets/inner-pages.css` styles Support, Privacy, Releases, and the 404 page. `assets/playground.js` powers the landing page's interactive desktop scene. The scene is an illustration built with Zerre's real pixel art; it is not an app screenshot.
+- `assets/zerre-social.svg` is the editable 1200 × 630 social link card; `assets/zerre-social.png` is the raster preview used by the homepage's social metadata.
 - `releases.html`, `releases.json`, `appcast.xml`: written by the release workflow on every release (don't edit by hand)
 
 The app release workflow replaces the `RELEASE_LATEST` block in `index.html` and updates links marked `data-release-download`. Keep those markers when editing the homepage.

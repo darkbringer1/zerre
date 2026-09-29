@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f0e4"/>
+  <circle cx="997" cy="287" r="340" fill="#dbead8"/>
+  <circle cx="1080" cy="560" r="225" fill="#c6dfca"/>
+  <path d="M0 594 C300 544 506 585 670 630 H0 Z" fill="#f8dfa5" opacity=".72"/>
+  <g fill="#648773" opacity=".24">
+    <circle cx="73" cy="86" r="2"/><circle cx="103" cy="86" r="2"/><circle cx="133" cy="86" r="2"/>
+    <circle cx="73" cy="116" r="2"/><circle cx="103" cy="116" r="2"/><circle cx="133" cy="116" r="2"/>
+    <circle cx="1100" cy="56" r="2"/><circle cx="1130" cy="56" r="2"/><circle cx="1160" cy="56" r="2"/>
+  </g>
+  <rect x="70" y="56" width="72" height="72" rx="13" fill="#e6f1e2" stroke="#a3bda5" stroke-width="2"/>
+  <image x="82" y="60" width="52" height="52" xlink:href="favicon.svg"/>
+  <text x="157" y="114" font-family="Georgia, serif" font-weight="700" font-size="59" letter-spacing="-4" fill="#21322d">zerre<tspan fill="#df7858">.</tspan></text>
+  <text x="78" y="247" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="62" letter-spacing="-3" fill="#21322d">A little life</text>
+  <text x="78" y="318" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="65" letter-spacing="-3" fill="#254b3d">for your</text>
+  <text x="78" y="391" font-family="Georgia, serif" font-style="italic" font-weight="700" font-size="65" letter-spacing="-3" fill="#254b3d">coding day.</text>
+  <text x="81" y="436" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#52685a">A tiny creature for your Mac.</text>
+  <rect x="78" y="493" width="345" height="58" rx="9" fill="#254b3d"/>
+  <text x="102" y="530" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#fffdf6">Free for Mac · macOS 26+</text>
+  <path d="M638 114h20v34h34v20h-34v34h-20v-34h-34v-20h34z" fill="#e99879"/>
+  <image x="677" y="44" width="586" height="586" xlink:href="zerre-hero.png"/>
+</svg>
