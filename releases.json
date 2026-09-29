@@ -1,7 +1,42 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.4.0",
+  "latest": "v0.5.0",
   "releases": [
+    {
+      "version": "0.5.0",
+      "tag": "v0.5.0",
+      "publishedAt": "2026-09-29T11:13:20Z",
+      "downloadURL": "https://github.com/darkbringer1/zerre/releases/download/v0.5.0/Zerre-0.5.0.dmg",
+      "releaseURL": "https://github.com/darkbringer1/zerre/releases/tag/v0.5.0",
+      "sha256": "5c5f976e3264c234bab1892d5d91e1401f7cb859f677fb30363cbca3e6c91ed1",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Achievements: every trait Zerre grows stays unlocked in a gallery, with hints for the ones still to find."
+            },
+            {
+              "title": "Zerre steps out of sight while your screen is shared or recorded. Turn it off in Settings to film it."
+            }
+          ]
+        },
+        {
+          "title": "Improved",
+          "items": [
+            {
+              "title": "Walking and animations use about half the CPU they did, so Zerre is easier on your battery."
+            },
+            {
+              "title": "Fresh pixel art for sparkles, hearts, dust, sleepy Zs, the focus timer and thought bubbles."
+            },
+            {
+              "title": "The right-click menu no longer shows the Debug submenu."
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.4.0",
       "tag": "v0.4.0",
