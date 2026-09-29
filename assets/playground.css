@@ -1901,42 +1901,6 @@ img[src^="/assets/sprites/"] {
   color:#557661
 }
 
-.traits-strip ul {
-  list-style:none;
-  margin:20px 0 0;
-  padding:0;
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
-  gap:22px 18px
-}
-
-.traits-strip li {
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-  font-size:12px;
-  color:#56675a
-}
-
-.traits-strip li strong {
-  font-family:var(--serif);
-  font-size:16px;
-  color:var(--ink)
-}
-
-.trait-art {
-  height:64px;
-  display:flex;
-  align-items:flex-end;
-  margin-bottom:8px
-}
-
-.traits-strip p {
-  margin:20px 0 0;
-  font-size:12px;
-  color:#6c7b6f
-}
-
 .quiet-creature {
   position:absolute;
   z-index:2;
@@ -2148,4 +2112,56 @@ img[src^="/assets/sprites/"] {
   .pixel-creature .pose-blink,.desktop-creature,.desktop.is-reacting .desktop-creature {
     animation:none
   }
+}
+
+/* Achievements teaser: the app's gallery in miniature. Locked ones are outlines only. */
+.achievements-lede {
+  max-width:60ch;
+  margin:10px 0 0;
+  font-size:13px;
+  color:#56675a
+}
+
+.achievements-grid {
+  list-style:none;
+  margin:22px 0 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(84px,1fr));
+  gap:10px
+}
+
+@media(min-width:1100px) {
+  .achievements-grid {
+    grid-template-columns:repeat(11,1fr)
+  }
+}
+
+.achievement {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  padding:14px 8px 12px;
+  border:1.5px solid #b8cbb6;
+  border-radius:9px;
+  background:#fffdf4;
+  font-size:12px;
+  font-weight:700;
+  color:#2f4a3c;
+  text-align:center
+}
+
+.achievement.is-locked {
+  background:#ece8da;
+  border-style:dashed;
+  color:#8a9a8e;
+  letter-spacing:.1em
+}
+
+.achievement-art {
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:center
 }
