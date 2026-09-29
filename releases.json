@@ -1,7 +1,34 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.3.0",
+  "latest": "v0.4.0",
   "releases": [
+    {
+      "version": "0.4.0",
+      "tag": "v0.4.0",
+      "publishedAt": "2026-09-29T07:49:21Z",
+      "downloadURL": "https://github.com/darkbringer1/zerre/releases/download/v0.4.0/Zerre-0.4.0.dmg",
+      "releaseURL": "https://github.com/darkbringer1/zerre/releases/tag/v0.4.0",
+      "sha256": "09869dcaf4e627614b1a8be68a304c0c0fbfb7a299178e204f07dea151e78f8f",
+      "sections": [
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Redraw the curious face and record releases up to 0.4.0"
+            },
+            {
+              "title": "Clarify release build for launch footage"
+            },
+            {
+              "title": "Prepare Zerre LinkedIn launch kit"
+            },
+            {
+              "title": "Draw Zerre's own pixel icons for the UI"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.3.0",
       "tag": "v0.3.0",
