@@ -1,7 +1,36 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.5.0",
+  "latest": "v0.6.0",
   "releases": [
+    {
+      "version": "0.6.0",
+      "tag": "v0.6.0",
+      "publishedAt": "2026-09-29T13:59:51Z",
+      "downloadURL": "https://github.com/darkbringer1/zerre/releases/download/v0.6.0/Zerre-0.6.0.dmg",
+      "releaseURL": "https://github.com/darkbringer1/zerre/releases/tag/v0.6.0",
+      "sha256": "7baec08aa54a41fa41973ebb7959e891c82502b28bf0e7f2fb5aca7c5ae1af49",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "The model picks a day theme each morning."
+            },
+            {
+              "title": "Commits and agents react with three new body-language moves."
+            }
+          ]
+        },
+        {
+          "title": "Improved",
+          "items": [
+            {
+              "title": "Every day has a theme."
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.5.0",
       "tag": "v0.5.0",
