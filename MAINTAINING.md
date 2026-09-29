@@ -12,6 +12,8 @@ This repository hosts Zerre's public website (GitHub Pages, https://zerre.doguka
 - `install.sh`: the one-line installer (`curl -fsSL https://zerre.dogukaan.dev/install.sh | sh`). It reads the latest release from `releases.json`, checks the DMG's SHA-256, the Developer ID team and Gatekeeper, then installs. Keep `releases.json`'s shape (`releases[0].version`, `.downloadURL`, `.sha256`) or update the script with it.
 - The Homebrew cask lives in [darkbringer1/homebrew-tap](https://github.com/darkbringer1/homebrew-tap); the release workflow bumps its version and checksum.
 
+CSS and JS are cached for up to four hours, so every page links them with a version (`/assets/playground.css?v=sprites1`). When you change a stylesheet or script, bump that version in every page and in the `releases.html` template in the app repo's `ci_scripts/update_release_site.py`, or returning visitors get new HTML with old styles.
+
 The app release workflow replaces the `RELEASE_LATEST` block in `index.html` and updates links marked `data-release-download`. Keep those markers when editing the homepage.
 
 ## Website traffic in Cloudflare
