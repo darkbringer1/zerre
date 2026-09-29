@@ -1,42 +1,109 @@
-# Zerre
+<p align="center">
+  <a href="https://zerre.dogukaan.dev"><img src="assets/zerre-social.png" alt="Zerre: a little life for your coding day. A tiny creature for your Mac." width="720"></a>
+</p>
 
-A tiny creature that lives on your Mac's desktop and grows from your real life.
+<p align="center">
+  <a href="https://github.com/darkbringer1/zerre/releases/latest"><img src="https://img.shields.io/github/v/release/darkbringer1/zerre?label=latest&color=3d6b4f" alt="Latest release"></a>
+  <img src="https://img.shields.io/badge/macOS-26%2B-3d6b4f" alt="macOS 26 or later">
+  <img src="https://img.shields.io/badge/signed%20%26%20notarized-Developer%20ID-3d6b4f" alt="Signed and notarized">
+  <img src="https://img.shields.io/badge/price-free-e8967a" alt="Free">
+</p>
 
-**Website:** https://zerre.dogukaan.dev · **Downloads:** [Releases](https://github.com/darkbringer1/zerre/releases)
+<p align="center">
+  <a href="https://zerre.dogukaan.dev"><b>Website</b></a> ·
+  <a href="https://github.com/darkbringer1/zerre/releases/latest"><b>Download</b></a> ·
+  <a href="https://zerre.dogukaan.dev/releases"><b>Release notes</b></a> ·
+  <a href="https://zerre.dogukaan.dev/privacy"><b>Privacy</b></a> ·
+  <a href="https://github.com/darkbringer1/zerre/issues/new/choose"><b>Feedback</b></a>
+</p>
 
-This repository hosts Zerre's public website (GitHub Pages) and its signed, notarized releases. The app's source is private.
+---
 
-- `index.html`, `privacy.html`, `support.html`, `404.html`: the site
-- `assets/playground.css` supplies the shared visual language; `assets/inner-pages.css` styles Support, Privacy, Releases, and the 404 page. `assets/playground.js` powers the landing page's interactive desktop scene. The scene is an illustration built with Zerre's real pixel art; it is not an app screenshot.
-- `assets/zerre-social.svg` is the editable 1200 × 630 social link card; `assets/zerre-social.png` is the raster preview used by the homepage's social metadata.
-- `releases.html`, `releases.json`, `appcast.xml`: written by the release workflow on every release (don't edit by hand)
+**Zerre** is a tiny pixel creature that lives on your Mac's desktop. It naps on the Dock, hops onto windows and watches your cursor. It notices your agent handoffs, commits and focus time, and turns the rhythm of your day into a character that feels like yours.
 
-The app release workflow replaces the `RELEASE_LATEST` block in `index.html` and updates links marked `data-release-download`. Keep those markers when editing the homepage.
+*Zerre* means "speck", a tiny particle, in Turkish. Small things can grow.
 
-## Website traffic in Cloudflare
+## Install
 
-The site uses no separate analytics provider or external tracking script. Cloudflare can count its normal page requests only when the `zerre.dogukaan.dev` DNS record is **Proxied** (orange cloud). In the Cloudflare dashboard, open **dogukaan.dev → Analytics & Logs → HTTP Traffic** for overall requests and unique visitors. On the Free plan, detailed Host and Path filters are not listed for that dashboard; use the report below for page and event paths. The GitHub Pages origin may serve pretty URLs with or without `.html`; the report includes both forms.
-
-`assets/analytics.js` sends a small first-party request when a homepage heading is at least half visible, someone clicks a key link or demo button, or a tagged LinkedIn announcement link opens the homepage. The files in `assets/analytics/` exist only so those requests return 200. The report groups request counts by path:
-
-| What to inspect | Path |
-| --- | --- |
-| Download button clicks | `/assets/analytics/click-download.txt` |
-| Feedback link clicks | `/assets/analytics/click-feedback.txt` |
-| People reaching the download section | `/assets/analytics/section-download.txt` |
-| English LinkedIn announcement arrivals | `/assets/analytics/source-linkedin-en.txt` |
-| Turkish LinkedIn announcement arrivals | `/assets/analytics/source-linkedin-tr.txt` |
-| Other homepage sections and clicks | `/assets/analytics/section-*.txt` and `/assets/analytics/click-*.txt` |
-
-To see page, section, click, and campaign counts on Cloudflare Free, create a Cloudflare API token with **Account → Account Analytics → Read**, scoped to the `dogukaan.dev` zone. Find the Zone ID on that zone's **Overview** page. From this repository, run:
+**Homebrew**
 
 ```sh
-export CLOUDFLARE_ZONE_ID='<zone ID>'
-read -rs CLOUDFLARE_API_TOKEN
-export CLOUDFLARE_API_TOKEN
-python3 scripts/cloudflare_traffic.py
+brew install --cask darkbringer1/tap/zerre
 ```
 
-The `read` command accepts the token without displaying it or adding it to shell history; press Return after pasting. The script uses only Python's standard library and reads the token from the environment. It reports the last 24 hours by default; use `--hours 6` for a shorter window. The [Cloudflare GraphQL Analytics API](https://developers.cloudflare.com/analytics/graphql-api/features/discovery/settings/) exposes the request dataset on all plans, though limits depend on the zone. On Pro and higher, you can also filter HTTP Traffic by Host and Path in the dashboard.
+**One line in Terminal**
 
-Section counts are approximate exposure, not eye tracking. Click counts are browser requests, not completed downloads. Campaign arrivals count openings of the tagged links, not unique visitors; they do not attribute later clicks to a specific post. Cloudflare may sample requests and may include crawlers. No cookies or persistent visitor IDs are created by the site script. The [privacy page](privacy.html) describes the website counts separately from the app's local data.
+```sh
+curl -fsSL https://zerre.dogukaan.dev/install.sh | sh
+```
+
+The [script](install.sh) downloads the latest release, checks its checksum, Developer ID signature and notarization, installs Zerre to `/Applications` and opens it. It never asks for your password.
+
+**Or download it:** grab the DMG from [the latest release](https://github.com/darkbringer1/zerre/releases/latest) and drag Zerre to Applications.
+
+All three give you the app and the `zerrectl` command. Zerre updates itself after that.
+
+## What it does
+
+- **Lives on your desktop.** Wanders, naps, follows your cursor and reacts when you poke it. It has moods and little habits of its own.
+- **Keeps you company while you work.** Claude Code, Codex, Gemini CLI and OpenCode tell Zerre when a turn ends or needs you, and it holds up a little note. Click it to jump back to that terminal when it can.
+- **Grows from your days.** Focus blocks, commits and your own patterns slowly give it traits: a sprout for the days you show up, and more over time.
+- **Stays calm.** At most three nudges a day. Quiet during focus, at night and in meetings. Ignore it and it gets sleepy, never punishing.
+
+Connect only the tools you want from the welcome screen or Settings › Hooks. Zerre works with nothing connected, too.
+
+## In your terminal
+
+`zerrectl` is Zerre's command-line companion:
+
+```sh
+zerrectl                    # a live dashboard: mood, focus, what's waiting for you
+zerrectl focus 25           # start a 25-minute focus block
+zerrectl start              # just start: 5 minutes on the thing you're avoiding
+zerrectl note "stretch in 20 min"   # pin a reminder to Zerre's notice board
+zerrectl pending            # agents and long commands waiting for you
+zerrectl help               # everything else
+```
+
+## Private by design
+
+Zerre notices *that* things happen, never *what* they were.
+
+- Agent hooks send handoffs, not your prompts or code.
+- Calendar access, if you grant it, tells Zerre when you're busy, not what the meeting is.
+- Everything it remembers stays on your Mac. No account, no usage telemetry.
+- Settings › Your data exports everything it has noticed, or erases it.
+
+The full details are on the [privacy page](https://zerre.dogukaan.dev/privacy).
+
+## Requirements
+
+- macOS 26 Tahoe or later
+- About 20 MB of disk space
+
+## Updating and uninstalling
+
+Zerre checks for updates once a day and installs them through Sparkle. You can also use **Check for Updates…** on its menu bar card.
+
+To remove it completely, open **Settings › Your data › Remove Zerre from this Mac** first. That takes out the hooks it added to your agents, git and zsh, and deletes its data. Then:
+
+```sh
+brew uninstall --cask zerre     # if you installed with Homebrew
+```
+
+or drag Zerre from Applications to the Trash.
+
+## Feedback
+
+Zerre is young and your feedback shapes what comes next. Tell me what felt delightful, distracting or confusing:
+
+- [Share feedback or report a bug](https://github.com/darkbringer1/zerre/issues/new/choose)
+- Prefer to write privately? [zerre@dogukaan.dev](mailto:zerre@dogukaan.dev)
+
+Please don't send your event log or notes. They're not needed.
+
+## About this repository
+
+This repository hosts Zerre's [website](https://zerre.dogukaan.dev) and its releases. The app's source is private. Maintainer notes are in [MAINTAINING.md](MAINTAINING.md).
+
+<p align="center"><sub>Made with care for curious Mac people.</sub></p>
