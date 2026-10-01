@@ -1,7 +1,83 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.6.0",
+  "latest": "v0.7.0",
   "releases": [
+    {
+      "version": "0.7.0",
+      "tag": "v0.7.0",
+      "publishedAt": "2026-10-01T15:17:57Z",
+      "downloadURL": "https://github.com/darkbringer1/zerre/releases/download/v0.7.0/Zerre-0.7.0.dmg",
+      "releaseURL": "https://github.com/darkbringer1/zerre/releases/tag/v0.7.0",
+      "sha256": "378aeaa1ab4f5f6fde25c0ed7f502f5123920c6aa17dcf4ab6819402a5a8dfa9",
+      "sections": [
+        {
+          "title": "Fixes",
+          "items": [
+            {
+              "title": "Fix fullscreen focus shielding and soften the menu bar edge"
+            }
+          ]
+        },
+        {
+          "title": "Improvements",
+          "items": [
+            {
+              "title": "Improve notch home interactions and add focus shield controls"
+            }
+          ]
+        },
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Release notes for 0.7.0"
+            },
+            {
+              "title": "Copy the app's sprites to the website, and draft the 0.7 LinkedIn kit"
+            },
+            {
+              "title": "Capture the \"Hold this\" idea: lending Zerre a drag in the notch"
+            },
+            {
+              "title": "Hop toward the notch on an arc, and arc back down to home"
+            },
+            {
+              "title": "Keep Zerre out of sight above the screen, and time its hops to the display"
+            },
+            {
+              "title": "Celebrate each trait the first time it's earned, and redo the notch desk"
+            },
+            {
+              "title": "Keep the notch hop moving off screen, and give the room tap targets"
+            },
+            {
+              "title": "Put the notch on one pixel grid and add the tomato shelf"
+            },
+            {
+              "title": "Tell Zerre about Antigravity turns, through its own hooks file"
+            },
+            {
+              "title": "Stand only on window tops that aren't behind another window"
+            },
+            {
+              "title": "Let the Zerre be dragged up to the top of the screen"
+            },
+            {
+              "title": "Trot to the middle of the screen before jumping up to the notch"
+            },
+            {
+              "title": "Focus sessions: blocks and breaks, a tomato vine, a recap, the shield and the notch"
+            },
+            {
+              "title": "Spike the focus shield: a blur that blocks clicks outside its holes"
+            },
+            {
+              "title": "Note that CI archives with an older Xcode than the dev Mac"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.6.0",
       "tag": "v0.6.0",
