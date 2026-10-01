@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f0e4">
-  <title>Zerre — a little life on your desktop</title>
-  <meta name="description" content="Meet Zerre, a tiny creature for your Mac. It reacts to coding agents, commits and focus time, and grows with the rhythm of your day.">
-  <meta property="og:title" content="Zerre — a little life on your desktop">
-  <meta property="og:description" content="A tiny Mac creature that notices your coding day and grows with you.">
+  <title>Zerre — a little life on your desktop, and now in your notch</title>
+  <meta name="description" content="Meet Zerre, a tiny creature for your Mac. It reacts to coding agents and commits, and now runs focus sessions with you: it hops into your notch, keeps interruptions waiting, and grows a tomato for every block.">
+  <meta property="og:title" content="Zerre — it moved into your notch">
+  <meta property="og:description" content="A tiny Mac creature that works beside you in focus blocks and grows a tomato for every one you finish.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zerre.dogukaan.dev">
   <meta property="og:image" content="https://zerre.dogukaan.dev/assets/zerre-social.png">
@@ -17,18 +17,36 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/playground.css?v=sprites2">
+  <link rel="stylesheet" href="/assets/home.css?v=notch3">
   <script src="/assets/playground.js?v=sprites2" defer></script>
-  <script src="/assets/analytics.js?v=sprites2" defer></script>
+  <script src="/assets/home.js?v=notch3" defer></script>
+  <script src="/assets/analytics.js?v=notch2" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- The page's own notch: Zerre lives here during a block. It grows open like the app's island. -->
+  <div class="page-notch" id="notch" data-state="empty">
+    <div class="notch-shape">
+      <button class="notch-face" id="notch-toggle" type="button" aria-expanded="false" aria-controls="notch-room" aria-label="Zerre's home in the notch. Open it.">
+        <canvas id="notch-compact" aria-hidden="true"></canvas>
+        <span class="notch-status" id="notch-status">zerre</span>
+      </button>
+      <div class="notch-room" id="notch-room" inert>
+        <div class="notch-room-head"><strong id="notch-title">Zerre’s home</strong><span id="notch-detail">Start a block to move in</span></div>
+        <canvas id="notch-canvas" aria-label="Zerre's room in the notch: its desk and laptop, the tomato vine and the notice board."></canvas>
+        <div class="notch-room-labels" aria-hidden="true"><span>Desk</span><span>Vine</span><span>Notes</span></div>
+        <a class="notch-room-link" href="#shelf">In the app, the vine opens the shelf ↓</a>
+      </div>
+    </div>
+  </div>
 
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="wordmark" href="/" aria-label="Zerre home"><img src="/assets/favicon.svg" alt="" width="34" height="34"> <span>zerre<span class="wordmark-dot">.</span></span></a>
       <nav class="primary-nav" aria-label="Main navigation">
-        <a href="#meet">Meet Zerre</a>
-        <a href="#how-it-works">How it works</a>
+        <a href="#a-block">A focus block</a>
+        <a href="#firsts">Firsts</a>
         <a href="/privacy">Privacy</a>
         <a href="/support">Support</a>
       </nav>
@@ -37,21 +55,22 @@
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero home-hero" aria-labelledby="hero-title">
       <div class="hero-sky" aria-hidden="true"><img class="star star-one" src="/assets/sprites/particle.star.png" alt="" width="18" height="18"><img class="star star-two" src="/assets/sprites/particle.star.png" alt="" width="12" height="12"><img class="star star-three" src="/assets/sprites/particle.star.png" alt="" width="21" height="21"></div>
       <div class="wrap hero-layout">
         <div class="hero-copy">
-          <div class="pill"><span class="pill-light"></span> Now living on macOS 26+</div>
-          <h1 id="hero-title" data-analytics-section="hero">Your workday has a <em>little life</em> of its own.</h1>
-          <p class="hero-lede">Meet Zerre, a tiny creature who lives on your Mac. It notices agent handoffs, commits and focus time, then turns the rhythm of your day into a character that feels like yours.</p>
+          <div class="pill"><span class="pill-light"></span> New · focus sessions</div>
+          <h1 id="hero-title" data-analytics-section="hero">Zerre moved into your <em>notch.</em></h1>
+          <p class="hero-lede">A tiny creature for your Mac that notices agent handoffs and commits. Now it does focus blocks with you: it hops up into the notch to work at its own little desk, keeps interruptions waiting, and grows a tomato for every block you finish.</p>
           <div class="hero-actions">
             <a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.7.0/Zerre-0.7.0.dmg">Download for Mac <span aria-hidden="true">↗</span></a>
-            <a class="button button-text" href="#meet">Come say hello <span aria-hidden="true">↓</span></a>
+            <button class="button button-text block-toggle" type="button" id="block-toggle" aria-pressed="false">Start a focus block <span aria-hidden="true">◷</span></button>
           </div>
-          <p class="hero-small">Apple silicon · No account · Free</p>
+          <p class="hero-small">Apple silicon · macOS 26+ · No account · Free</p>
+          <p class="hero-hint" id="zerre-hint">That’s Zerre, down at the bottom of this window. Say hi.</p>
         </div>
 
-        <div class="desktop" id="desktop-demo" aria-label="Interactive illustration of how Zerre responds to a coding day">
+        <div class="desktop home-desktop" id="moments-demo" aria-label="Interactive illustration of how Zerre responds to a coding day">
           <div class="desktop-dots" aria-hidden="true"></div>
           <div class="desktop-topline"><span class="desktop-label">A LITTLE CORNER OF YOUR MAC</span><span class="desktop-clock" aria-hidden="true">☀ 09:41</span></div>
           <div class="desktop-window">
@@ -63,12 +82,12 @@
             </div>
           </div>
           <div class="desktop-note" id="demo-note" aria-live="polite"><span class="note-pin" aria-hidden="true"></span><span class="note-kicker">a tiny update</span><strong id="demo-message">Your agent is done!</strong><span id="demo-detail">Ready when you are.</span></div>
-          <div class="desktop-creature pixel-creature"><img class="pose" id="demo-pose" src="/assets/sprites/zerre-agent.png" alt="Zerre, a mint-green pixel creature with a sprout and headphones, holding up a sticky note with a check mark" width="340" height="320"><img class="pose-blink" id="demo-blink" src="/assets/sprites/zerre-focus-blink.png" alt="" width="340" height="320" hidden></div>
-          <div class="desktop-ground" aria-hidden="true"><img class="ground-sprout" src="/assets/sprites/sprout.3.png" alt="" width="48" height="33"><span>····································</span></div>
+          <canvas class="moment-stage" id="moment-stage" aria-label="Zerre reacting to the selected moment."></canvas>
           <div class="desktop-controls" aria-label="Try a Zerre moment">
             <button class="moment is-active" type="button" data-moment="agent" aria-pressed="true">Agent done <span aria-hidden="true">✦</span></button>
             <button class="moment" type="button" data-moment="commit" aria-pressed="false">Commit <span aria-hidden="true">↗</span></button>
-            <button class="moment" type="button" data-moment="focus" aria-pressed="false">Focus block <span aria-hidden="true">◷</span></button>
+            <button class="moment" type="button" data-moment="focus" aria-pressed="false">Focus <span aria-hidden="true">◷</span></button>
+            <button class="moment" type="button" data-moment="first" aria-pressed="false">A first <span aria-hidden="true">★</span></button>
           </div>
           <span class="desktop-caption">Illustrated scene · real app moments</span>
         </div>
@@ -76,41 +95,63 @@
       <div class="hero-bottom" aria-hidden="true"><span>scroll to explore</span><span>↓</span></div>
     </section>
 
-    <div class="ticker" aria-label="Zerre notices the moments that make your day"><div class="ticker-track" aria-hidden="true"><span>CODE A LITTLE</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>TAKE A BREATH</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>SHIP A THING</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>WATCH IT GROW</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>CODE A LITTLE</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>TAKE A BREATH</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>SHIP A THING</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>WATCH IT GROW</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b></div></div>
+    <div class="ticker" aria-label="A focus block with Zerre"><div class="ticker-track" aria-hidden="true"><span>START A BLOCK</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>GROW A TOMATO</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>TAKE A BREAK</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>FILL A JAR</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>START A BLOCK</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>GROW A TOMATO</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>TAKE A BREAK</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>FILL A JAR</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b></div></div>
 
-    <section class="intro-section section-pad" id="meet" aria-labelledby="meet-title">
-      <div class="wrap intro-grid">
-        <div class="section-label"><span class="label-number">01 /</span> MEET YOUR NEW DESKTOP NEIGHBOR</div>
-        <div><h2 id="meet-title" data-analytics-section="meet">Somewhere between a pet, a tiny witness, and a good reason to smile at your screen.</h2><p>Zerre wanders, naps on the Dock, watches the cursor and reacts when you interact with it. It has moods and little habits of its own. The more days you spend together, the more your patterns show up in how it looks.</p><p class="intro-aside">Zerre means <em>“speck”</em>, a tiny particle, in Turkish. Small things can grow.</p></div>
-      </div>
-      <div class="wrap postcard-row" aria-label="A few Zerre moments">
-        <article class="postcard postcard-yellow"><span class="postcard-top">01 · HELLO THERE</span><span class="postcard-symbol" aria-hidden="true"><img src="/assets/sprites/portrait-curious.png" alt="" width="80" height="96"></span><h3>It follows your cursor.</h3><p>A little curiosity, right on your desktop.</p></article>
-        <article class="postcard postcard-blue"><span class="postcard-top">02 · TIME TO WORK</span><span class="postcard-symbol" aria-hidden="true"><img src="/assets/sprites/portrait-focus.png" alt="" width="80" height="96"></span><h3>It keeps you company.</h3><p>Focus blocks become part of its day, too.</p></article>
-        <article class="postcard postcard-peach"><span class="postcard-top">03 · YOU DID IT</span><span class="postcard-symbol" aria-hidden="true"><img src="/assets/sprites/portrait-commit.png" alt="" width="104" height="128"></span><h3>It celebrates with you.</h3><p>A small reaction when work is done.</p></article>
+    <section class="block-story section-pad" id="a-block" aria-labelledby="block-title">
+      <div class="wrap">
+        <div class="section-label"><span class="label-number">01 /</span> ONE FOCUS BLOCK, START TO FINISH</div>
+        <div class="story-heading"><h2 id="block-title" data-analytics-section="how_it_works">You work. <em>It works beside you.</em></h2><p>Set your blocks and breaks once in Settings. Then every block goes like this. Watch the notch at the top of this page: it’s counting down while you read.</p></div>
+
+        <ol class="chapters">
+          <li class="chapter" data-chapter="0">
+            <div class="chapter-copy"><span class="chapter-time">00:00</span><h3>It hops up into your notch.</h3><p>When a block starts, Zerre crouches and leaps up past the menu bar. A smaller Zerre, drawn for the notch, drops into its room up there.</p></div>
+            <div class="chapter-stage window-stage"><div class="window-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span>the trip</span></div><canvas id="stage-trip" aria-label="Zerre crouches on the desktop and hops up into the notch, where the small Zerre lands at its desk."></canvas></div>
+          </li>
+          <li class="chapter" data-chapter="1">
+            <div class="chapter-copy"><span class="chapter-time">03:00</span><h3>It works at its own little desk.</h3><p>Eyes on its laptop, one paw tapping at a time, a glance up now and then. The vine flowers while the block runs. In the app, tap the desk for your inbox and the vine for the shelf.</p></div>
+            <div class="chapter-stage notch-stage"><canvas id="stage-room" aria-label="Zerre typing at its desk in the notch, the tomato vine flowering, the notice board with notes."></canvas></div>
+          </li>
+          <li class="chapter chapter-shield" data-chapter="2">
+            <div class="chapter-copy"><span class="chapter-time">08:00</span><h3>Everything else goes soft.</h3><p>Windows behind the one you’re in blur and dim, so your work is the only loud thing on screen. Drop Zerre onto a window to focus right there. You choose how much blur and darkness in Settings, and you can lift it for a block. You’re seeing it on this page right now.</p></div>
+            <div class="chapter-stage shield-stage"><div class="shield-demo" id="shield-demo" aria-label="Three windows; the focused one stays sharp. Click another window to move the focus."><button class="mini-window" type="button" style="left:5%;top:12%;width:40%;height:46%" aria-label="Focus this window"><span></span><span></span><span></span></button><button class="mini-window is-focus" type="button" style="left:30%;top:30%;width:44%;height:54%" aria-label="Focus this window"><span></span><span></span><span></span><span></span></button><button class="mini-window" type="button" style="left:63%;top:8%;width:31%;height:40%" aria-label="Focus this window"><span></span><span></span></button></div><span class="stage-caption">Click a window to move the focus</span></div>
+          </li>
+          <li class="chapter" data-chapter="3">
+            <div class="chapter-copy"><span class="chapter-time">14:00</span><h3>Interruptions wait in its backpack.</h3><p>Your agents can finish and your commands can complete. Zerre tucks their notes into its backpack and unpacks them when the block is over. Only what can’t wait, a reminder or an agent stuck on you, still gets through.</p></div>
+            <div class="chapter-stage paper-stage"><canvas id="stage-pack" aria-label="Zerre with a backpack; papers slide into it one by one."></canvas><div class="desktop-note small-note"><span class="note-pin" aria-hidden="true"></span><span class="note-kicker">kept for later</span><strong>Agent finished · 2</strong><span>Command done · 1</span></div></div>
+          </li>
+          <li class="chapter" data-chapter="4">
+            <div class="chapter-copy"><span class="chapter-time">25:00</span><h3>Every block grows a tomato.</h3><p>Finish a block and a tomato ripens on the vine. Stop early and it still grows a green one, because it still counts. Then a short recap of the block: what happened, and if you want it, which apps the time went to. App names and minutes, nothing more.</p></div>
+            <div class="chapter-stage vine-stage"><canvas id="stage-vine" aria-label="The tomato vine. Use the buttons to finish a block or stop early."></canvas><div class="vine-controls"><button type="button" id="vine-finish">Finish a block</button><button type="button" id="vine-stop">Stop early</button><button type="button" id="vine-reset">New day</button></div><p class="stage-caption" id="vine-caption" aria-live="polite">Flowering: a block is running.</p></div>
+          </li>
+          <li class="chapter" id="shelf" data-chapter="5">
+            <div class="chapter-copy"><span class="chapter-time">Day’s end</span><h3>Your days fill a shelf.</h3><p>Tap the vine and a shelf opens below the notch. Each day with a finished block gets a jar of its tomatoes, lidded when the day is over. Older weeks become a single bottle of sauce. Days without a block add nothing, so there are no gaps to count.</p></div>
+            <div class="chapter-stage shelf-stage"><canvas id="stage-shelf" aria-label="A shelf with a week of jars of tomatoes and a few bottles; today's jar is open."></canvas><span class="stage-caption">An example week</span></div>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section class="story-section section-pad" id="how-it-works" aria-labelledby="story-title">
-      <div class="wrap">
-        <div class="section-label"><span class="label-number">02 /</span> HOW IT WORKS</div>
-        <div class="story-heading"><h2 id="story-title" data-analytics-section="how_it_works">You do your thing.<br><em>Zerre does its little thing.</em></h2><p>Connect only the tools you want. Tiny event signals shape Zerre over time. You get a companion with a memory of your days, without another chore to maintain.</p></div>
-        <div class="story-steps">
-          <div class="story-step"><span class="step-no">1</span><div><span class="step-eyebrow">A SIGNAL</span><h3>Your agent finishes.</h3><p>Claude Code, Codex, Gemini CLI and OpenCode can tell Zerre when a turn ends or needs you.</p></div><div class="step-art step-art-agent" aria-hidden="true"><img class="step-terminal" src="/assets/sprites/trait.terminal.cursor.png" alt="" width="84" height="66"><img class="step-spark" src="/assets/sprites/particle.star.png" alt="" width="15" height="15"><img class="step-spark step-spark-small" src="/assets/sprites/particle.star.png" alt="" width="9" height="9"></div></div>
-          <div class="story-step"><span class="step-no">2</span><div><span class="step-eyebrow">A REACTION</span><h3>Zerre notices.</h3><p>It holds up a little note. Click it to return to the terminal when the return path is available.</p></div><div class="step-art step-art-note" aria-hidden="true"><img src="/assets/sprites/portrait-agent.png" alt="" width="80" height="110"></div></div>
-          <div class="story-step"><span class="step-no">3</span><div><span class="step-eyebrow">A LITTLE HISTORY</span><h3>Your days leave a trace.</h3><p>Focus blocks, commits and other repeated patterns can gradually give Zerre new traits.</p></div><div class="step-art step-art-grow" aria-hidden="true"><img src="/assets/sprites/sprout.0.png" alt="" width="64" height="24"><img src="/assets/sprites/sprout.2.png" alt="" width="64" height="40"><img src="/assets/sprites/sprout.5.png" alt="" width="64" height="56"></div></div>
+    <section class="firsts-section section-pad" id="firsts" aria-labelledby="firsts-title">
+      <div class="wrap firsts-layout">
+        <div class="firsts-copy">
+          <div class="section-label"><span class="label-number">02 /</span> TWENTY-TWO LITTLE FIRSTS</div>
+          <h2 id="firsts-title" data-analytics-section="firsts">Your habits grow traits. Each one <em>arrives in style.</em></h2>
+          <p>A trophy for a 50-minute block, a nightcap for late nights, a hard hat for long builds. Traits come from the shape of your days and stay once earned. The first time each one appears, Zerre gets a little scene of its own, then a note saying what you did.</p>
+          <p class="firsts-hint">Six are shown here. Pick one to watch it. The rest keep their secret until your days reveal them.</p>
         </div>
-        <div class="traits-strip achievements-strip"><span class="traits-label">22 ACHIEVEMENTS TO FIND</span><p class="achievements-lede">Every trait Zerre grows from your habits is an achievement, and it stays unlocked once earned. Six are shown here. The rest keep their shape and their secret until your days reveal them.</p><ul class="achievements-grid"><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.terminal.cursor.png" alt="A locked achievement" width="42" height="33"></span><span>???</span></li><li class="achievement"><span class="achievement-art"><img src="/assets/sprites/trait.badge.png" alt="Shipper" width="21" height="21"></span><span>Shipper</span></li><li class="achievement"><span class="achievement-art"><img src="/assets/sprites/trait.robot.0.png" alt="Agent wrangler" width="27" height="27"></span><span>Agent wrangler</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.pencil.png" alt="A locked achievement" width="12" height="30"></span><span>???</span></li><li class="achievement"><span class="achievement-art"><img src="/assets/sprites/trait.mug.0.png" alt="Early bird" width="27" height="27"></span><span>Early bird</span></li><li class="achievement"><span class="achievement-art"><img src="/assets/sprites/trait.nightcap.png" alt="Night owl" width="54" height="33"></span><span>Night owl</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.sweatband.png" alt="A locked achievement" width="96" height="9"></span><span>???</span></li><li class="achievement"><span class="achievement-art"><img src="/assets/sprites/trait.bottle.png" alt="Hydrated" width="15" height="27"></span><span>Hydrated</span></li><li class="achievement"><span class="achievement-art"><img src="/assets/sprites/trait.headphones.png" alt="Deep diver" width="78" height="30"></span><span>Deep diver</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.compass.png" alt="A locked achievement" width="15" height="18"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.wrench.png" alt="A locked achievement" width="33" height="21"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.tie.png" alt="A locked achievement" width="15" height="24"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.broom.png" alt="A locked achievement" width="18" height="39"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.watch.png" alt="A locked achievement" width="15" height="18"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.pillow.png" alt="A locked achievement" width="33" height="15"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.walkie.png" alt="A locked achievement" width="15" height="33"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.trophy.png" alt="A locked achievement" width="21" height="27"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.clipboard.png" alt="A locked achievement" width="24" height="30"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.star.png" alt="A locked achievement" width="21" height="21"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.hardhat.png" alt="A locked achievement" width="72" height="27"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.bento.png" alt="A locked achievement" width="30" height="18"></span><span>???</span></li><li class="achievement is-locked"><span class="achievement-art"><img src="/assets/sprites/outline.trait.visor.png" alt="A locked achievement" width="90" height="12"></span><span>???</span></li></ul></div>
-        <div class="tools-strip"><span>PLAYS NICELY WITH</span><ul><li>Claude Code</li><li>Codex</li><li>Gemini CLI</li><li>OpenCode</li><li>git</li><li>zsh</li></ul></div>
+        <div class="firsts-stage postcard-stage"><canvas id="stage-firsts" aria-label="Zerre playing a first-time trait celebration."></canvas><span class="stage-caption" id="firsts-caption" aria-live="polite"></span></div>
       </div>
+      <div class="wrap"><ul class="achievements-grid firsts-grid" id="firsts-grid" aria-label="The 22 traits"></ul></div>
+      <div class="wrap"><div class="tools-strip"><span>PLAYS NICELY WITH</span><ul><li>Claude Code</li><li>Codex</li><li>Gemini CLI</li><li>OpenCode</li><li>Antigravity</li><li>git</li><li>zsh</li></ul></div></div>
     </section>
 
     <section class="quiet-section section-pad" aria-labelledby="quiet-title">
-      <div class="wrap quiet-grid"><div class="quiet-illustration" aria-hidden="true"><div class="quiet-moon">☾</div><div class="quiet-cloud quiet-cloud-one"></div><div class="quiet-cloud quiet-cloud-two"></div><div class="quiet-small-window">meeting in progress <span>zzz</span></div><img class="quiet-creature" src="/assets/sprites/portrait-sleep.png" alt="" width="171" height="144"></div><div class="quiet-copy"><div class="section-label"><span class="label-number">03 /</span> CALM BY DEFAULT</div><h2 id="quiet-title" data-analytics-section="calm">A companion that knows when to <em>hush.</em></h2><p>Zerre has a small daily nudge budget. It stays quiet during focus time, at night, and during meetings when you connect Calendar. Ignore it for a while and it gets sleepy, never punishing.</p><a class="inline-link" href="/privacy">See exactly what it notices <span aria-hidden="true">↗</span></a></div></div>
+      <div class="wrap quiet-grid"><div class="quiet-illustration" aria-hidden="true"><div class="quiet-moon">☾</div><div class="quiet-cloud quiet-cloud-one"></div><div class="quiet-cloud quiet-cloud-two"></div><div class="quiet-small-window">meeting in progress <span>zzz</span></div><img class="quiet-creature" src="/assets/sprites/portrait-sleep.png" alt="" width="171" height="144"></div><div class="quiet-copy"><div class="section-label"><span class="label-number">03 /</span> CALM BY DEFAULT</div><h2 id="quiet-title" data-analytics-section="calm">A companion that knows when to <em>hush.</em></h2><p>Zerre has a small daily nudge budget. It stays quiet during focus blocks, at night, and during meetings when you connect Calendar. Breaks are its turn too: tea for a short one, a nap for a long one, whether or not you take yours. Ignore it for a while and it gets sleepy, never punishing.</p><a class="inline-link" href="/privacy">See exactly what it notices <span aria-hidden="true">↗</span></a></div></div>
     </section>
 
-    <section class="privacy-section section-pad" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div class="privacy-stamp" aria-hidden="true"><span>YOUR MAC<br>YOUR LITTLE WORLD</span><b><img src="/assets/sprites/mark.zerre.png" alt="" width="64" height="64"></b></div><div><div class="section-label"><span class="label-number">04 /</span> MADE TO STAY YOURS</div><h2 id="privacy-title" data-analytics-section="privacy">It notices that things happened. <em>It does not read your work.</em></h2><p>Agent hooks tell Zerre about handoffs, not prompts or code. Calendar access, if you grant it, tells Zerre when you're busy, not what the meeting is. Its history stays on your Mac. The app has no account or usage telemetry. This website counts visits and a few clicks; the details are on the privacy page.</p><p class="privacy-fine">Notes you choose to write on Zerre's board are saved locally so it can show them again.</p><a class="inline-link" href="/privacy">Read the full privacy details <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="privacy-section section-pad" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div class="privacy-stamp" aria-hidden="true"><span>YOUR MAC<br>YOUR LITTLE WORLD</span><b><img src="/assets/sprites/mark.zerre.png" alt="" width="64" height="64"></b></div><div><div class="section-label"><span class="label-number">04 /</span> MADE TO STAY YOURS</div><h2 id="privacy-title" data-analytics-section="privacy">It notices that things happened. <em>It does not read your work.</em></h2><p>Agent hooks tell Zerre about handoffs, not prompts or code. Calendar access, if you grant it, tells Zerre when you’re busy, not what the meeting is. Time per app during a block is app names and minutes, and you can turn it off. Its history stays on your Mac. The app has no account or usage telemetry. This website counts visits and a few clicks; the details are on the privacy page.</p><p class="privacy-fine">Notes you choose to write on Zerre’s board are saved locally so it can show them again.</p><a class="inline-link" href="/privacy">Read the full privacy details <span aria-hidden="true">↗</span></a></div></div></section>
 
-    <section class="download-section section-pad" id="download" aria-labelledby="download-title"><div class="wrap download-card"><div class="download-doodle" aria-hidden="true"><img src="/assets/sprites/particle.star.png" alt="" width="24" height="24"></div><div><div class="section-label"><span class="label-number">05 /</span> YOUR DESKTOP IS WAITING</div><h2 id="download-title" data-analytics-section="download">Make a little room for Zerre.</h2><p>Zerre for Mac is ready. Download it, connect a tool or two, and see what kind of little companion grows beside you.</p><div class="download-actions"><a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.7.0/Zerre-0.7.0.dmg">Download Zerre <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/releases">Release notes</a></div><div class="install-box" id="install">
+    <section class="download-section section-pad" id="download" aria-labelledby="download-title"><div class="wrap download-card"><div class="download-doodle" aria-hidden="true"><img src="/assets/sprites/particle.star.png" alt="" width="24" height="24"></div><div><div class="section-label"><span class="label-number">05 /</span> YOUR NOTCH IS WAITING</div><h2 id="download-title" data-analytics-section="download">Give your notch a tenant.</h2><p>Zerre for Mac is free. Download it, start a block, and see what grows beside you.</p><div class="download-actions"><a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.7.0/Zerre-0.7.0.dmg">Download Zerre <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/releases">Release notes</a></div><div class="install-box" id="install">
             <div class="install-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span>or install from Terminal</span></div>
             <div class="install-tabs" role="tablist" aria-label="Install method">
               <button type="button" role="tab" id="install-tab-brew" aria-selected="true" aria-controls="install-panel" data-install="brew">Homebrew</button>
@@ -149,6 +190,9 @@
 
     <section class="feedback-section" aria-labelledby="feedback-title"><div class="wrap feedback-inner"><span class="feedback-star" aria-hidden="true"><img src="/assets/sprites/card.doodle.png" alt="" width="72" height="52"></span><div><h2 id="feedback-title" data-analytics-section="feedback">Help this little thing grow.</h2><p>Tried Zerre? Tell me what felt delightful, distracting or confusing. Early feedback will shape what comes next.</p></div><a class="button button-outline" href="https://github.com/darkbringer1/zerre/issues/new/choose">Share feedback <span aria-hidden="true">↗</span></a></div></section>
   </main>
+
+  <!-- The vine in the margin ripens as you read the block. -->
+  <canvas class="margin-vine" id="margin-vine" aria-hidden="true"></canvas>
 
   <footer class="site-footer"><div class="wrap footer-grid"><div><a class="wordmark" href="/"><img src="/assets/favicon.svg" alt="" width="30" height="30"> <span>zerre<span class="wordmark-dot">.</span></span></a><p>A little life on your desktop.</p></div><nav aria-label="Footer navigation"><a href="/releases">Releases</a><a href="/privacy">Privacy</a><a href="/support">Support</a><a href="https://github.com/darkbringer1/zerre/issues">Feedback</a></nav><span class="footer-end">© 2026 Zerre. Made with care for curious Mac people.</span></div></footer>
 </body>

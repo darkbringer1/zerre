@@ -1,0 +1,192 @@
+/* The homepage for focus sessions, layered on playground.css (the shared paper-desk language).
+   New pieces: the page's own notch, the story of one focus block told with live scenes drawn
+   from Zerre's sprites, the firsts stage, and the vine ripening in the margin. */
+
+:root {
+  --tomato: #d9503f;
+  --notch: #0b0b0c;
+  --stage-ink: #425e4b;
+  --stage-shadow: #d9d6bf;
+}
+
+canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edges; max-width: 100%; }
+
+/* Keep the middle of the header free for the notch. */
+.site-header .primary-nav { margin-left: auto; }
+.page-notch, .notch-shape { -webkit-tap-highlight-color: transparent; }
+
+/* ---------- The notch ----------
+   One black shape that grows open and shrinks back, like the island in the app; the room fades
+   in once it has room. */
+.page-notch { position: fixed; top: 0; left: 50%; translate: -50% 0; z-index: 60; }
+.notch-shape {
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  width: 236px;
+  height: 36px;
+  background: var(--notch);
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 36px auto;
+  justify-items: center;
+  transition: width .42s var(--ease), height .42s var(--ease), border-radius .42s var(--ease), box-shadow .42s var(--ease);
+}
+.page-notch.is-open .notch-shape {
+  width: min(440px, calc(100vw - 16px));
+  height: var(--open-height, 262px);
+  border-radius: 0 0 26px 26px;
+  box-shadow: 0 24px 48px -24px #000a;
+}
+.notch-face {
+  all: unset;
+  box-sizing: border-box;
+  width: 236px;
+  height: 36px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 16px 0 14px;
+  cursor: pointer;
+}
+.notch-face:focus-visible { outline: 3px solid #e37850; outline-offset: -3px; border-radius: 0 0 14px 14px; }
+.notch-face canvas { align-self: flex-end; transition: opacity .2s ease; }
+.page-notch.is-open .notch-face canvas { opacity: 0; }
+.notch-status { align-self: center; font: 700 13px/1 ui-monospace, "SF Mono", Menlo, monospace; color: #fff; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+.page-notch[data-state="empty"] .notch-status { color: #ffffff8c; font-weight: 500; }
+.notch-room {
+  width: min(440px, calc(100vw - 16px));
+  padding: 0 20px 16px;
+  color: #fff;
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  opacity: 0;
+  translate: 0 -6px;
+  transition: opacity .18s ease, translate .3s var(--ease);
+}
+.page-notch.is-open .notch-room { opacity: 1; translate: 0 0; transition-delay: .12s; }
+.notch-room-head { width: 100%; display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; color: #ffffffa8; }
+.notch-room-head strong { color: #fff; font-size: 13px; }
+.notch-room-labels { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; font-size: 10px; color: #ffffffb3; text-align: center; margin-top: -4px; }
+.notch-room-link { font-size: 11px; color: #a3c9ab; }
+.notch-room-link:hover { color: #fff; }
+
+/* ---------- Hero ---------- */
+.home-desktop { min-height: 560px; }
+.moment-stage { position: absolute; left: 50%; bottom: 52px; translate: -50% 0; z-index: 3; }
+.block-toggle { border: 0; background: none; cursor: pointer; }
+.hero-hint { margin-top: 14px; font-size: 13px; color: #6b7a70; }
+.hero-hint::before { content: "↘ "; color: #c2704c; }
+
+/* ---------- The page's own Zerre, on the bottom edge of the window ---------- */
+.page-zerre { position: fixed; z-index: 45; cursor: pointer; touch-action: manipulation; }
+.page-zerre[hidden] { display: none; }
+.page-zerre:focus-visible { outline: 3px solid #e37850; outline-offset: -6px; border-radius: 16px; }
+
+/* ---------- One focus block ---------- */
+.block-story { background: var(--paper); border-top: 1px solid #d3d9c9; border-bottom: 1px solid #d3d9c9; }
+.block-story .story-heading { margin-bottom: clamp(48px, 7vw, 96px); }
+/* Compact steps, so the ones above and below stay on screen, blurred, around the one you're reading. */
+.chapters { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(28px, 3.5vw, 48px); }
+.chapter { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 72px); align-items: center; transition: filter .5s ease, opacity .5s ease; }
+.chapter:nth-child(even) .chapter-copy { order: 2; }
+.chapter-copy h3 { font-size: clamp(26px, 3vw, 40px); letter-spacing: -.035em; margin: 8px 0 10px; }
+.chapter-copy p { color: var(--muted); max-width: 46ch; margin: 0; }
+.chapter-time { font: 700 12px/1 ui-monospace, "SF Mono", Menlo, monospace; color: #c2704c; letter-spacing: .08em; text-transform: uppercase; }
+/* The shield, on the page: while you read one step, the others go soft. */
+.block-story.is-shielded .chapter:not(.is-current) { filter: blur(3px); opacity: .42; }
+.shield-toggle { all: unset; cursor: pointer; font-size: 12px; font-weight: 700; color: var(--stage-ink); border-bottom: 2px solid #9aba9e; }
+.shield-toggle:focus-visible { outline: 3px solid #e37850; outline-offset: 4px; }
+
+.chapter-stage {
+  position: relative;
+  border: 2px solid var(--stage-ink);
+  border-radius: 14px;
+  box-shadow: 9px 10px 0 var(--stage-shadow);
+  background: #f9f7ee;
+  overflow: hidden;
+  min-height: 240px;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.chapter:nth-child(odd) .chapter-stage { rotate: .6deg; }
+.chapter:nth-child(even) .chapter-stage { rotate: -.6deg; }
+.window-stage { padding: 0; align-content: start; background: linear-gradient(155deg, #e6f1df 0%, #b9d6bc 70%, #9bc6b4 100%); }
+.window-stage .window-bar { width: 100%; justify-self: stretch; }
+.window-stage canvas { margin: 18px auto 18px; }
+.notch-stage { background: #22302c; }
+.shield-stage { background: radial-gradient(circle at 30% 20%, #c5dccb, #8fb5a4); }
+.paper-stage { background: #fdf3d8; grid-template-columns: auto auto; gap: 8px; justify-content: center; }
+.vine-stage { background: #eef5ea; gap: 12px; }
+.shelf-stage { background: #f3ead6; }
+.stage-caption { position: absolute; left: 16px; bottom: 12px; font-size: 11px; color: #61705f; margin: 0; }
+.vine-stage .stage-caption { position: static; }
+.small-note { position: relative; inset: auto; width: 168px; min-height: 0; rotate: 5deg; }
+
+.shield-demo { position: relative; width: 100%; max-width: 480px; aspect-ratio: 16 / 10; }
+.mini-window {
+  all: unset;
+  position: absolute;
+  border-radius: 8px;
+  background: #fffdf6;
+  border: 2px solid #425e4b;
+  box-shadow: 4px 5px 0 #425e4b33;
+  cursor: pointer;
+  transition: filter .45s ease, opacity .45s ease;
+}
+.mini-window::before { content: ""; display: block; height: 12px; border-bottom: 2px solid #425e4b; background: #e9efe2; border-radius: 6px 6px 0 0; }
+.mini-window span { display: block; height: 6px; margin: 8px 10px 0; border-radius: 3px; background: #d9dfd3; }
+.mini-window span:nth-child(2) { width: 60%; }
+.shield-demo .mini-window:not(.is-focus) { filter: blur(4px) brightness(.62); }
+.mini-window.is-focus { border-color: var(--tomato); }
+.mini-window:focus-visible { outline: 3px solid #e37850; outline-offset: 3px; }
+
+.vine-controls { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.vine-controls button {
+  border: 2px solid var(--stage-ink);
+  border-radius: 999px;
+  background: #fffdf6;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #9aba9e;
+}
+.vine-controls button:hover { background: var(--mint); }
+
+/* ---------- Firsts ---------- */
+.firsts-layout { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.firsts-copy h2 { font-size: clamp(36px, 4.6vw, 62px); margin: 22px 0; }
+.firsts-copy p { color: var(--muted); max-width: 48ch; }
+.firsts-hint { font-size: 14px; }
+.postcard-stage { border: 2px solid var(--stage-ink); border-radius: 12px; box-shadow: 9px 10px 0 var(--stage-shadow); background: #eaf1e2; display: grid; place-items: center; padding: 18px 18px 36px; position: relative; rotate: -1deg; }
+.firsts-grid { margin-top: 48px; }
+.firsts-grid button.achievement { appearance: none; width: 100%; height: 100%; font-family: inherit; cursor: pointer; transition: transform .15s ease, background .15s ease; }
+.firsts-grid button.achievement:hover { background: #eef6e9; transform: translateY(-2px); }
+.firsts-grid .achievement.is-playing { outline: 3px solid var(--tomato); outline-offset: 2px; border-radius: 10px; }
+.firsts-grid button.achievement:focus-visible { outline: 3px solid #e37850; outline-offset: 2px; border-radius: 10px; }
+
+/* ---------- The vine in the margin ---------- */
+.margin-vine { position: fixed; left: 22px; bottom: 22px; z-index: 30; opacity: 0; transition: opacity .4s ease; pointer-events: none; }
+.margin-vine.is-shown { opacity: 1; }
+
+@media (max-width: 1100px) { .margin-vine { display: none; } }
+@media (max-width: 860px) {
+  .chapter, .firsts-layout { grid-template-columns: 1fr; }
+  .chapter:nth-child(even) .chapter-copy { order: 0; }
+  .chapter-stage { min-height: 240px; }
+  .home-desktop { min-height: 500px; }
+  .site-header .primary-nav { display: none; }
+}
+@media (max-width: 560px) {
+  .notch-shape, .notch-face { width: 140px; }
+  .notch-face { gap: 8px; padding: 0 10px 0 8px; }
+  .notch-status { font-size: 11px; }
+  .paper-stage { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chapter, .mini-window, .notch-shape, .notch-room, .margin-vine { transition: none; }
+}
