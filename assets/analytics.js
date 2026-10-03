@@ -32,7 +32,9 @@
     'source-linkedin-en',
     'source-linkedin-tr',
     'source-linkedin-0-7-en',
-    'source-linkedin-0-7-tr'
+    'source-linkedin-0-7-tr',
+    'source-linkedin-0-8-en',
+    'source-linkedin-0-8-tr'
   ]);
 
   function count(eventName) {
@@ -59,6 +61,12 @@
       const language = params.get('utm_content');
       if (language === 'en_focus') count('source-linkedin-0-7-en');
       if (language === 'tr_focus') count('source-linkedin-0-7-tr');
+    }
+    if (params.get('utm_source') === 'linkedin' &&
+        params.get('utm_campaign') === 'zerre_0_8') {
+      const language = params.get('utm_content');
+      if (language === 'en_update') count('source-linkedin-0-8-en');
+      if (language === 'tr_update') count('source-linkedin-0-8-tr');
     }
   }
 

@@ -30,6 +30,8 @@ The site uses no separate analytics provider or external tracking script. Cloudf
 | People reaching the download section | `/assets/analytics/section-download.txt` |
 | English LinkedIn announcement arrivals | `/assets/analytics/source-linkedin-en.txt` |
 | Turkish LinkedIn announcement arrivals | `/assets/analytics/source-linkedin-tr.txt` |
+| LinkedIn 0.7 post arrivals (English, Turkish) | `/assets/analytics/source-linkedin-0-7-en.txt`, `/assets/analytics/source-linkedin-0-7-tr.txt` |
+| LinkedIn 0.8 update post arrivals (English, Turkish) | `/assets/analytics/source-linkedin-0-8-en.txt`, `/assets/analytics/source-linkedin-0-8-tr.txt` |
 | Other homepage sections and clicks | `/assets/analytics/section-*.txt` and `/assets/analytics/click-*.txt` |
 
 To see page, section, click, and campaign counts on Cloudflare Free, create a Cloudflare API token with **Account → Account Analytics → Read**, scoped to the `dogukaan.dev` zone. Find the Zone ID on that zone's **Overview** page. From this repository, run:
