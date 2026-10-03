@@ -3,12 +3,12 @@
     <channel>
         <title>Zerre</title>
         <item>
-            <title>0.7.0</title>
-            <pubDate>Thu, 01 Oct 2026 15:20:52 +0000</pubDate>
-            <sparkle:version>89</sparkle:version>
-            <sparkle:shortVersionString>0.7.0</sparkle:shortVersionString>
+            <title>0.8.0</title>
+            <pubDate>Sat, 03 Oct 2026 14:27:38 +0000</pubDate>
+            <sparkle:version>100</sparkle:version>
+            <sparkle:shortVersionString>0.8.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/darkbringer1/zerre/releases/download/v0.7.0/Zerre-0.7.0.dmg" length="9067152" type="application/octet-stream" sparkle:edSignature="yS5D8J0Hwmtqx9tzH9lP+ggGRQltazebNqqR3UaIzUKw3Z30gmIxgTxVcgrMLiHM/b4w0XadH7oiuTQIaaosBw=="/>
+            <enclosure url="https://github.com/darkbringer1/zerre/releases/download/v0.8.0/Zerre-0.8.0.dmg" length="9171415" type="application/octet-stream" sparkle:edSignature="dvB/Dr9lBPMh4Tbw2luAiMsYqS+nVe7KLcYjJOXTAh+xojWsp0NvkP71HsKIRw58dSYC51IOcRBDDyVuKGOOCQ=="/>
         </item>
     </channel>
 </rss>

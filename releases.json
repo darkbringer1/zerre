@@ -1,7 +1,60 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.7.0",
+  "latest": "v0.8.0",
   "releases": [
+    {
+      "version": "0.8.0",
+      "tag": "v0.8.0",
+      "publishedAt": "2026-10-03T14:25:38Z",
+      "downloadURL": "https://github.com/darkbringer1/zerre/releases/download/v0.8.0/Zerre-0.8.0.dmg",
+      "releaseURL": "https://github.com/darkbringer1/zerre/releases/tag/v0.8.0",
+      "sha256": "f7953d2c831ae55728dc278cb935fe3de35a1242e551164012d15b96e7bacbed",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Add the focus shield blur spikes"
+            },
+            {
+              "title": "Add brand and full-app marketing films with LinkedIn launch kits"
+            }
+          ]
+        },
+        {
+          "title": "Maintenance",
+          "items": [
+            {
+              "title": "Release notes for 0.8.0"
+            },
+            {
+              "title": "Split Settings into sidebar pages"
+            },
+            {
+              "title": "Move the menu bar card's actions into a gear menu"
+            },
+            {
+              "title": "Make the focus shield really blur, softly, over the whole screen"
+            },
+            {
+              "title": "Make the notch home optional, with a note post beside Zerre"
+            },
+            {
+              "title": "Put on and take off achievements from the gallery"
+            },
+            {
+              "title": "Stand on the screen's bottom edge in full-screen apps"
+            },
+            {
+              "title": "Render the 0.7 promo clip from the app's sprites, and finish the post"
+            },
+            {
+              "title": "Record releases 0.5.0 to 0.7.0"
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.7.0",
       "tag": "v0.7.0",
