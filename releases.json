@@ -14,42 +14,38 @@
           "title": "New",
           "items": [
             {
-              "title": "Add the focus shield blur spikes"
+              "title": "Put on any achievement you've earned, or take one off, from the achievements window. Free spots still fill with this week's traits."
             },
             {
-              "title": "Add brand and full-app marketing films with LinkedIn launch kits"
+              "title": "The notch home is optional (Settings \u203a Home by the notch). Without it, notes go on a little board that pops up beside Zerre."
+            },
+            {
+              "title": "Settings has its own pages now, with a small preview of the focus shield on the Focus page."
             }
           ]
         },
         {
-          "title": "Maintenance",
+          "title": "Improved",
           "items": [
             {
-              "title": "Release notes for 0.8.0"
+              "title": "The focus shield really blurs now, with a slider for how much. It covers the menu bar and Dock too."
             },
             {
-              "title": "Split Settings into sidebar pages"
+              "title": "When a block starts, the shield spreads out from the window you work in and stays lighter around it."
             },
             {
-              "title": "Move the menu bar card's actions into a gear menu"
+              "title": "The menu bar card is tidier: Achievements, Settings, Feedback, Updates and Quit live in one gear menu."
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "title": "In full-screen apps, Zerre stands on the bottom of the screen instead of floating where the Dock would be."
             },
             {
-              "title": "Make the focus shield really blur, softly, over the whole screen"
-            },
-            {
-              "title": "Make the notch home optional, with a note post beside Zerre"
-            },
-            {
-              "title": "Put on and take off achievements from the gallery"
-            },
-            {
-              "title": "Stand on the screen's bottom edge in full-screen apps"
-            },
-            {
-              "title": "Render the 0.7 promo clip from the app's sprites, and finish the post"
-            },
-            {
-              "title": "Record releases 0.5.0 to 0.7.0"
+              "title": "Buttons and labels in the menu bar card no longer cut each other off."
             }
           ]
         }
