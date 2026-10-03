@@ -190,3 +190,22 @@ canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edge
 @media (prefers-reduced-motion: reduce) {
   .chapter, .mini-window, .notch-shape, .notch-room, .margin-vine { transition: none; }
 }
+
+/* ---------- The product film ----------
+   The whole app in one video, beside chapter buttons that jump into it. */
+.film-layout { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.film-copy h2 { font-size: clamp(36px, 4.6vw, 62px); margin: 22px 0; }
+.film-copy p { max-width: 52ch; }
+.film-chapters { list-style: none; padding: 0; margin: 18px 0 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+.film-chapters button { all: unset; cursor: pointer; display: inline-flex; gap: 8px; align-items: baseline; padding: 7px 13px; border: 2px solid var(--stage-ink); border-radius: 999px; background: var(--paper); font-size: 14px; font-weight: 600; color: var(--ink); box-shadow: 3px 3px 0 var(--stage-shadow); }
+.film-chapters button span { font: 500 12px/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--muted); font-variant-numeric: tabular-nums; }
+.film-chapters button:hover { background: var(--mint); }
+.film-chapters button:focus-visible { outline: 3px solid #e37850; outline-offset: 2px; }
+.film-fine { font-size: 13px; color: var(--muted); }
+.film-frame { margin: 0; justify-self: center; width: min(100%, 440px); }
+.film-frame video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; border: 2px solid var(--stage-ink); border-radius: 14px; box-shadow: 9px 10px 0 var(--stage-shadow); background: #f7f5ec; }
+.film-frame figcaption { margin-top: 12px; font-size: 12px; color: #61705f; text-align: center; }
+@media (max-width: 860px) {
+  .film-layout { grid-template-columns: 1fr; }
+  .film-frame { order: -1; }
+}

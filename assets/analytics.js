@@ -18,6 +18,9 @@
     'click-demo-block',
     'click-demo-first',
     'click-zerre',
+    'click-film-play',
+    'click-film',
+    'section-film',
     'click-notch',
     'click-first',
     'click-firsts',
@@ -98,6 +101,8 @@
       count('click-download-section');
     } else if (url.origin === window.location.origin && url.hash === '#meet') {
       count('click-meet');
+    } else if (url.origin === window.location.origin && url.hash === '#film') {
+      count('click-film');
     } else if (url.origin === window.location.origin && url.hash === '#firsts') {
       count('click-firsts');
     } else if (url.origin === window.location.origin && (url.hash === '#how-it-works' || url.hash === '#a-block')) {

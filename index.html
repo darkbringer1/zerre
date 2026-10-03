@@ -4,23 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f0e4">
-  <title>Zerre — a little life on your desktop, and now in your notch</title>
-  <meta name="description" content="Meet Zerre, a tiny creature for your Mac. It reacts to coding agents and commits, and now runs focus sessions with you: it hops into your notch, keeps interruptions waiting, and grows a tomato for every block.">
-  <meta property="og:title" content="Zerre — it moved into your notch">
-  <meta property="og:description" content="A tiny Mac creature that works beside you in focus blocks and grows a tomato for every one you finish.">
+  <title>Zerre — a little life on your Mac</title>
+  <meta name="description" content="Meet Zerre, a tiny pixel creature for your Mac. It notices when your coding agent is done, celebrates your commits, keeps your notes, and works beside you in focus blocks. Your habits shape who it becomes.">
+  <meta property="og:title" content="Zerre: a little life on your Mac">
+  <meta property="og:description" content="A tiny pixel companion for your Mac. It notices agent handoffs and commits, works beside you in focus blocks, keeps your notes, and grows from your days. Free for macOS 26+.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zerre.dogukaan.dev">
-  <meta property="og:image" content="https://zerre.dogukaan.dev/assets/zerre-social.png">
+  <meta property="og:image" content="https://zerre.dogukaan.dev/assets/zerre-social-0-8.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Zerre, a tiny mint-green creature for your Mac, beside the words A little life for your coding day.">
+  <meta property="og:image:alt" content="Zerre, a tiny mint-green pixel creature wearing a hard hat beside its little note board, next to the words A little life on your Mac.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/playground.css?v=sprites2">
-  <link rel="stylesheet" href="/assets/home.css?v=notch3">
+  <link rel="stylesheet" href="/assets/home.css?v=film08">
   <script src="/assets/playground.js?v=sprites2" defer></script>
   <script src="/assets/home.js?v=notch3" defer></script>
-  <script src="/assets/analytics.js?v=update08" defer></script>
+  <script src="/assets/film.js?v=film08b" defer></script>
+  <script src="/assets/analytics.js?v=film08b" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -59,9 +60,9 @@
       <div class="hero-sky" aria-hidden="true"><img class="star star-one" src="/assets/sprites/particle.star.png" alt="" width="18" height="18"><img class="star star-two" src="/assets/sprites/particle.star.png" alt="" width="12" height="12"><img class="star star-three" src="/assets/sprites/particle.star.png" alt="" width="21" height="21"></div>
       <div class="wrap hero-layout">
         <div class="hero-copy">
-          <div class="pill"><span class="pill-light"></span> New · focus sessions</div>
-          <h1 id="hero-title" data-analytics-section="hero">Zerre moved into your <em>notch.</em></h1>
-          <p class="hero-lede">A tiny creature for your Mac that notices agent handoffs and commits. Now it does focus blocks with you: it hops up into the notch to work at its own little desk, keeps interruptions waiting, and grows a tomato for every block you finish.</p>
+          <a class="pill" href="#film"><span class="pill-light"></span> New in 0.8 · see the whole app <span aria-hidden="true">↓</span></a>
+          <h1 id="hero-title" data-analytics-section="hero">A little life on your <em>Mac.</em></h1>
+          <p class="hero-lede">Zerre is a tiny pixel creature that notices when your coding agent is done, celebrates your commits, keeps your notes, and works beside you in focus blocks, up in the notch or right on your desktop. Your habits slowly shape who it becomes.</p>
           <div class="hero-actions">
             <a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.8.0/Zerre-0.8.0.dmg">Download for Mac <span aria-hidden="true">↗</span></a>
             <button class="button button-text block-toggle" type="button" id="block-toggle" aria-pressed="false">Start a focus block <span aria-hidden="true">◷</span></button>
@@ -95,11 +96,30 @@
       <div class="hero-bottom" aria-hidden="true"><span>scroll to explore</span><span>↓</span></div>
     </section>
 
+    <section class="film-section section-pad" id="film" aria-labelledby="film-title">
+      <div class="wrap film-layout">
+        <div class="film-copy">
+          <div class="section-label"><span class="label-number">01 /</span> THE WHOLE APP</div>
+          <h2 id="film-title" data-analytics-section="film">Everything Zerre does, <em>in under two minutes.</em></h2>
+          <p>Agent handoffs and small wins, notes and reminders, focus blocks and breaks, a vine that ripens, traits it wears, and the quiet it keeps. Jump to a part:</p>
+          <ul class="film-chapters"><li><button type="button" data-film-at="4">Desktop life <span>0:04</span></button></li><li><button type="button" data-film-at="14">Coding agents <span>0:14</span></button></li><li><button type="button" data-film-at="26">Notes <span>0:26</span></button></li><li><button type="button" data-film-at="32">Focus <span>0:32</span></button></li><li><button type="button" data-film-at="42">Your notch, your call <span>0:42</span></button></li><li><button type="button" data-film-at="53">Harvest <span>0:53</span></button></li><li><button type="button" data-film-at="66">Wear what you earned <span>1:06</span></button></li><li><button type="button" data-film-at="82">Your controls <span>1:22</span></button></li></ul>
+          <p class="film-fine">Animated with the app’s own pixel art, not a screen recording. Examples are illustrative.</p>
+        </div>
+        <figure class="film-frame">
+          <video id="film-video" controls playsinline preload="metadata" poster="/assets/film/zerre-full-app-poster.jpg" width="1080" height="1350">
+            <source src="/assets/film/zerre-full-app.mp4" type="video/mp4">
+            <track kind="captions" src="/assets/film/zerre-full-app.vtt" srclang="en" label="English">
+          </video>
+          <figcaption>Zerre 0.8 · 1 min 38 s · with sound</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <div class="ticker" aria-label="A focus block with Zerre"><div class="ticker-track" aria-hidden="true"><span>START A BLOCK</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>GROW A TOMATO</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>TAKE A BREAK</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>FILL A JAR</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>START A BLOCK</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>GROW A TOMATO</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>TAKE A BREAK</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b><span>FILL A JAR</span><b><img src="/assets/sprites/particle.star.png" alt="" width="12" height="12"></b></div></div>
 
     <section class="block-story section-pad" id="a-block" aria-labelledby="block-title">
       <div class="wrap">
-        <div class="section-label"><span class="label-number">01 /</span> ONE FOCUS BLOCK, START TO FINISH</div>
+        <div class="section-label"><span class="label-number">02 /</span> ONE FOCUS BLOCK, START TO FINISH</div>
         <div class="story-heading"><h2 id="block-title" data-analytics-section="how_it_works">You work. <em>It works beside you.</em></h2><p>Set your blocks and breaks once in Settings. Then every block goes like this. Watch the notch at the top of this page: it’s counting down while you read.</p></div>
 
         <ol class="chapters">
@@ -134,7 +154,7 @@
     <section class="firsts-section section-pad" id="firsts" aria-labelledby="firsts-title">
       <div class="wrap firsts-layout">
         <div class="firsts-copy">
-          <div class="section-label"><span class="label-number">02 /</span> TWENTY-TWO LITTLE FIRSTS</div>
+          <div class="section-label"><span class="label-number">03 /</span> TWENTY-TWO LITTLE FIRSTS</div>
           <h2 id="firsts-title" data-analytics-section="firsts">Your habits grow traits. Each one <em>arrives in style.</em></h2>
           <p>A trophy for a 50-minute block, a nightcap for late nights, a hard hat for long builds. Traits come from the shape of your days and stay once earned. The first time each one appears, Zerre gets a little scene of its own, then a note saying what you did.</p>
           <p class="firsts-hint">Six are shown here. Pick one to watch it. The rest keep their secret until your days reveal them.</p>
@@ -146,12 +166,12 @@
     </section>
 
     <section class="quiet-section section-pad" aria-labelledby="quiet-title">
-      <div class="wrap quiet-grid"><div class="quiet-illustration" aria-hidden="true"><div class="quiet-moon">☾</div><div class="quiet-cloud quiet-cloud-one"></div><div class="quiet-cloud quiet-cloud-two"></div><div class="quiet-small-window">meeting in progress <span>zzz</span></div><img class="quiet-creature" src="/assets/sprites/portrait-sleep.png" alt="" width="171" height="144"></div><div class="quiet-copy"><div class="section-label"><span class="label-number">03 /</span> CALM BY DEFAULT</div><h2 id="quiet-title" data-analytics-section="calm">A companion that knows when to <em>hush.</em></h2><p>Zerre has a small daily nudge budget. It stays quiet during focus blocks, at night, and during meetings when you connect Calendar. Breaks are its turn too: tea for a short one, a nap for a long one, whether or not you take yours. Ignore it for a while and it gets sleepy, never punishing.</p><a class="inline-link" href="/privacy">See exactly what it notices <span aria-hidden="true">↗</span></a></div></div>
+      <div class="wrap quiet-grid"><div class="quiet-illustration" aria-hidden="true"><div class="quiet-moon">☾</div><div class="quiet-cloud quiet-cloud-one"></div><div class="quiet-cloud quiet-cloud-two"></div><div class="quiet-small-window">meeting in progress <span>zzz</span></div><img class="quiet-creature" src="/assets/sprites/portrait-sleep.png" alt="" width="171" height="144"></div><div class="quiet-copy"><div class="section-label"><span class="label-number">04 /</span> CALM BY DEFAULT</div><h2 id="quiet-title" data-analytics-section="calm">A companion that knows when to <em>hush.</em></h2><p>Zerre has a small daily nudge budget. It stays quiet during focus blocks, at night, and during meetings when you connect Calendar. Breaks are its turn too: tea for a short one, a nap for a long one, whether or not you take yours. Ignore it for a while and it gets sleepy, never punishing.</p><a class="inline-link" href="/privacy">See exactly what it notices <span aria-hidden="true">↗</span></a></div></div>
     </section>
 
-    <section class="privacy-section section-pad" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div class="privacy-stamp" aria-hidden="true"><span>YOUR MAC<br>YOUR LITTLE WORLD</span><b><img src="/assets/sprites/mark.zerre.png" alt="" width="64" height="64"></b></div><div><div class="section-label"><span class="label-number">04 /</span> MADE TO STAY YOURS</div><h2 id="privacy-title" data-analytics-section="privacy">It notices that things happened. <em>It does not read your work.</em></h2><p>Agent hooks tell Zerre about handoffs, not prompts or code. Calendar access, if you grant it, tells Zerre when you’re busy, not what the meeting is. Time per app during a block is app names and minutes, and you can turn it off. Its history stays on your Mac. The app has no account or usage telemetry. This website counts visits and a few clicks; the details are on the privacy page.</p><p class="privacy-fine">Notes you choose to write on Zerre’s board are saved locally so it can show them again.</p><a class="inline-link" href="/privacy">Read the full privacy details <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="privacy-section section-pad" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div class="privacy-stamp" aria-hidden="true"><span>YOUR MAC<br>YOUR LITTLE WORLD</span><b><img src="/assets/sprites/mark.zerre.png" alt="" width="64" height="64"></b></div><div><div class="section-label"><span class="label-number">05 /</span> MADE TO STAY YOURS</div><h2 id="privacy-title" data-analytics-section="privacy">It notices that things happened. <em>It does not read your work.</em></h2><p>Agent hooks tell Zerre about handoffs, not prompts or code. Calendar access, if you grant it, tells Zerre when you’re busy, not what the meeting is. Time per app during a block is app names and minutes, and you can turn it off. Its history stays on your Mac. The app has no account or usage telemetry. This website counts visits and a few clicks; the details are on the privacy page.</p><p class="privacy-fine">Notes you choose to write on Zerre’s board are saved locally so it can show them again.</p><a class="inline-link" href="/privacy">Read the full privacy details <span aria-hidden="true">↗</span></a></div></div></section>
 
-    <section class="download-section section-pad" id="download" aria-labelledby="download-title"><div class="wrap download-card"><div class="download-doodle" aria-hidden="true"><img src="/assets/sprites/particle.star.png" alt="" width="24" height="24"></div><div><div class="section-label"><span class="label-number">05 /</span> YOUR NOTCH IS WAITING</div><h2 id="download-title" data-analytics-section="download">Give your notch a tenant.</h2><p>Zerre for Mac is free. Download it, start a block, and see what grows beside you.</p><div class="download-actions"><a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.8.0/Zerre-0.8.0.dmg">Download Zerre <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/releases">Release notes</a></div><div class="install-box" id="install">
+    <section class="download-section section-pad" id="download" aria-labelledby="download-title"><div class="wrap download-card"><div class="download-doodle" aria-hidden="true"><img src="/assets/sprites/particle.star.png" alt="" width="24" height="24"></div><div><div class="section-label"><span class="label-number">06 /</span> YOUR NOTCH IS WAITING</div><h2 id="download-title" data-analytics-section="download">Give your notch a tenant.</h2><p>Zerre for Mac is free. Download it, start a block, and see what grows beside you.</p><div class="download-actions"><a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.8.0/Zerre-0.8.0.dmg">Download Zerre <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/releases">Release notes</a></div><div class="install-box" id="install">
             <div class="install-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span>or install from Terminal</span></div>
             <div class="install-tabs" role="tablist" aria-label="Install method">
               <button type="button" role="tab" id="install-tab-brew" aria-selected="true" aria-controls="install-panel" data-install="brew">Homebrew</button>
