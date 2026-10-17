@@ -1464,6 +1464,11 @@ h1 em,h2 em {
   color:#a8c1a8
 }
 
+.footer-end a {
+  text-decoration:underline;
+  text-underline-offset:2px
+}
+
 @media(max-width:1000px) {
   .hero-layout {
     grid-template-columns:1fr;
