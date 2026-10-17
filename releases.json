@@ -1,7 +1,47 @@
 {
   "schemaVersion": 1,
-  "latest": "v0.8.0",
+  "latest": "v0.9.0",
   "releases": [
+    {
+      "version": "0.9.0",
+      "tag": "v0.9.0",
+      "publishedAt": "2026-10-17T20:23:29Z",
+      "downloadURL": "https://github.com/darkbringer1/zerre/releases/download/v0.9.0/Zerre-0.9.0.dmg",
+      "releaseURL": "https://github.com/darkbringer1/zerre/releases/tag/v0.9.0",
+      "sha256": "efda7945583ed30ac2230ae477a213ada417fb544a6a6bb88fcfa2ed46d6018b",
+      "sections": [
+        {
+          "title": "New",
+          "items": [
+            {
+              "title": "Choose where Zerre lives: on the desktop, at its desk by the notch, or in the Dock (Settings \u203a Zerre \u203a Lives in)."
+            },
+            {
+              "title": "In the Dock, Zerre is the app icon and holds up its signs there. Click it to read them; right-click for focus and notes."
+            },
+            {
+              "title": "Full-screen apps get the screen to themselves. Only what can't wait peeks in from the edge, with its note beside it."
+            }
+          ]
+        },
+        {
+          "title": "Improved",
+          "items": [
+            {
+              "title": "Living by the notch, Zerre stays at its desk all day, meetings included, so the desktop stays clear."
+            }
+          ]
+        },
+        {
+          "title": "Fixed",
+          "items": [
+            {
+              "title": "Zerre's head no longer gets cut off during high, repeated jumps."
+            }
+          ]
+        }
+      ]
+    },
     {
       "version": "0.8.0",
       "tag": "v0.8.0",
