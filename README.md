@@ -19,7 +19,7 @@
 
 ---
 
-**Zerre** is a tiny pixel creature that lives on your Mac's desktop. It naps on the Dock, hops onto windows and watches your cursor. It notices your agent handoffs, commits and focus time, and turns the rhythm of your day into a character that feels like yours.
+**Zerre** is a tiny pixel creature that lives on your Mac: on the desktop, at its desk by the notch, or as your Dock icon. On the desktop it naps on the Dock, hops onto windows and watches your cursor. It notices your agent handoffs, commits and focus time, and turns the rhythm of your day into a character that feels like yours.
 
 *Zerre* means "speck", a tiny particle, in Turkish. Small things can grow.
 

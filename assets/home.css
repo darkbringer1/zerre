@@ -209,3 +209,31 @@ canvas { display: block; image-rendering: pixelated; image-rendering: crisp-edge
   .film-layout { grid-template-columns: 1fr; }
   .film-frame { order: -1; }
 }
+
+/* ---------- Where it lives ----------
+   Three small scenes from the app's own sprites, at whole-pixel scales: the desktop Zerre by a
+   window, the mini at its desk in the notch, and the mini as a Dock icon holding up a sign. */
+.homes-section { background: var(--cream); border-top: 1px solid #d3d9c9; }
+.homes-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.home-card { background: var(--paper); border: 2px solid var(--stage-ink); border-radius: 18px; padding: 18px 18px 22px; box-shadow: 5px 5px 0 var(--stage-shadow); }
+.home-card h3 { margin: 18px 0 6px; font-size: 22px; }
+.home-card p { margin: 0; color: #566959; font-size: 16px; }
+.home-scene { position: relative; height: 190px; border-radius: 12px; overflow: hidden; background: linear-gradient(#cfe7e3, #e9f3e5); }
+.home-scene img { image-rendering: pixelated; image-rendering: crisp-edges; display: block; }
+.scene-window { position: absolute; left: 14%; top: 22px; width: 52%; height: 104px; background: var(--paper); border: 2px solid #8fa596; border-radius: 8px; box-shadow: inset 0 14px 0 #dfe8df; }
+.scene-desktop-zerre { position: absolute; right: 14%; bottom: 10px; }
+.home-scene-notch { background: linear-gradient(#e9f3e5, #cfe7e3); }
+.scene-pill { position: absolute; top: 0; left: 50%; translate: -50% 0; width: 168px; height: 128px; background: var(--notch); border-radius: 0 0 22px 22px; }
+.scene-pill img { position: absolute; left: 36px; bottom: 14px; }
+.scene-pill .scene-table { left: 68px; bottom: 14px; } /* in front of the mini, laptop side, as in the app */
+.scene-dock { position: absolute; left: 50%; bottom: 12px; translate: -50% 0; display: flex; align-items: flex-end; gap: 12px; padding: 10px 14px; border-radius: 18px; background: #ffffff8c; border: 1px solid #ffffffb3; box-shadow: 0 4px 14px #23483a1f; }
+.scene-dock i { width: 44px; height: 44px; border-radius: 11px; background: #c9d6cc; }
+.scene-dock i:nth-child(2) { background: #a8d5dc; }
+.scene-dock-zerre { position: relative; width: 56px; height: 72px; }
+.scene-dock-zerre img { position: absolute; left: 0; bottom: 0; }
+.scene-dock-zerre .scene-sign { left: 10px; bottom: 44px; }
+.scene-dock-zerre b { position: absolute; right: -8px; top: 2px; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px; background: #e5483b; color: #fff; font: 700 12px/20px var(--sans); text-align: center; }
+.homes-fullscreen { display: flex; gap: 14px; align-items: center; margin: 32px 0 0; color: #566959; font-size: 16px; max-width: 70ch; }
+.homes-fullscreen img { image-rendering: pixelated; flex: none; }
+.homes-fullscreen strong { color: var(--ink); }
+@media (max-width: 860px) { .homes-grid { grid-template-columns: 1fr; } }

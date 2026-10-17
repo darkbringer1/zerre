@@ -17,7 +17,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/playground.css?v=sprites2">
-  <link rel="stylesheet" href="/assets/home.css?v=film08">
+  <link rel="stylesheet" href="/assets/home.css?v=homes09">
   <script src="/assets/playground.js?v=sprites2" defer></script>
   <script src="/assets/home.js?v=notch3" defer></script>
   <script src="/assets/film.js?v=film08b" defer></script>
@@ -62,7 +62,7 @@
         <div class="hero-copy">
           <a class="pill" href="#film"><span class="pill-light"></span> New in 0.8 · see the whole app <span aria-hidden="true">↓</span></a>
           <h1 id="hero-title" data-analytics-section="hero">A little life on your <em>Mac.</em></h1>
-          <p class="hero-lede">Zerre is a tiny pixel creature that notices when your coding agent is done, celebrates your commits, keeps your notes, and works beside you in focus blocks, up in the notch or right on your desktop. Your habits slowly shape who it becomes.</p>
+          <p class="hero-lede">Zerre is a tiny pixel creature that notices when your coding agent is done, celebrates your commits, keeps your notes, and works beside you in focus blocks, on your desktop, up in the notch or in your Dock. Your habits slowly shape who it becomes.</p>
           <div class="hero-actions">
             <a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.9.0/Zerre-0.9.0.dmg">Download for Mac <span aria-hidden="true">↗</span></a>
             <button class="button button-text block-toggle" type="button" id="block-toggle" aria-pressed="false">Start a focus block <span aria-hidden="true">◷</span></button>
@@ -165,13 +165,38 @@
       <div class="wrap"><div class="tools-strip"><span>PLAYS NICELY WITH</span><ul><li>Claude Code</li><li>Codex</li><li>Gemini CLI</li><li>OpenCode</li><li>Antigravity</li><li>git</li><li>zsh</li></ul></div></div>
     </section>
 
-    <section class="quiet-section section-pad" aria-labelledby="quiet-title">
-      <div class="wrap quiet-grid"><div class="quiet-illustration" aria-hidden="true"><div class="quiet-moon">☾</div><div class="quiet-cloud quiet-cloud-one"></div><div class="quiet-cloud quiet-cloud-two"></div><div class="quiet-small-window">meeting in progress <span>zzz</span></div><img class="quiet-creature" src="/assets/sprites/portrait-sleep.png" alt="" width="171" height="144"></div><div class="quiet-copy"><div class="section-label"><span class="label-number">04 /</span> CALM BY DEFAULT</div><h2 id="quiet-title" data-analytics-section="calm">A companion that knows when to <em>hush.</em></h2><p>Zerre has a small daily nudge budget. It stays quiet during focus blocks, at night, and during meetings when you connect Calendar. Breaks are its turn too: tea for a short one, a nap for a long one, whether or not you take yours. Ignore it for a while and it gets sleepy, never punishing.</p><a class="inline-link" href="/privacy">See exactly what it notices <span aria-hidden="true">↗</span></a></div></div>
+    <section class="homes-section section-pad" id="homes" aria-labelledby="homes-title">
+      <div class="wrap">
+        <div class="section-label"><span class="label-number">04 /</span> WHERE IT LIVES</div>
+        <div class="story-heading"><h2 id="homes-title" data-analytics-section="homes">Desktop, notch or Dock. <em>You pick its home.</em></h2><p>Choose in Settings › Zerre › Lives in. It notices the same things wherever it lives, and you can move it any time.</p></div>
+        <ul class="homes-grid">
+          <li class="home-card">
+            <div class="home-scene home-scene-desktop" aria-hidden="true"><span class="scene-window"></span><img class="scene-desktop-zerre" src="/assets/sprites/portrait-curious.png" alt="" width="80" height="96"></div>
+            <h3>On the desktop</h3>
+            <p>It walks around, naps on the Dock, hops onto your windows and visits its home by the notch.</p>
+          </li>
+          <li class="home-card">
+            <div class="home-scene home-scene-notch" aria-hidden="true"><span class="scene-pill"><img src="/assets/sprites/art/mini.focus.png" alt="" width="56" height="72"><img class="scene-table" src="/assets/sprites/art/home.table.png" alt="" width="72" height="24"></span></div>
+            <h3>By the notch</h3>
+            <p>It stays at its little desk up top all day, meetings included, so your desktop stays clear.</p>
+          </li>
+          <li class="home-card">
+            <div class="home-scene home-scene-dock" aria-hidden="true"><span class="scene-dock"><i></i><i></i><span class="scene-dock-zerre"><img src="/assets/sprites/art/mini.carry.png" alt="" width="56" height="72"><img class="scene-sign" src="/assets/sprites/art/card.agent_waiting.png" alt="" width="36" height="26"><b>1</b></span><i></i></span></div>
+            <h3>In the Dock</h3>
+            <p>It becomes the app icon and holds up its signs. Click it to read them. It hides whenever your Dock does.</p>
+          </li>
+        </ul>
+        <p class="homes-fullscreen"><img src="/assets/sprites/art/mini.carry.png" alt="" width="28" height="36"><span><strong>Full-screen apps get the screen to themselves.</strong> Only what can’t wait, a reminder or an agent stuck on you, peeks in from the edge with its note.</span></p>
+      </div>
     </section>
 
-    <section class="privacy-section section-pad" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div class="privacy-stamp" aria-hidden="true"><span>YOUR MAC<br>YOUR LITTLE WORLD</span><b><img src="/assets/sprites/mark.zerre.png" alt="" width="64" height="64"></b></div><div><div class="section-label"><span class="label-number">05 /</span> MADE TO STAY YOURS</div><h2 id="privacy-title" data-analytics-section="privacy">It notices that things happened. <em>It does not read your work.</em></h2><p>Agent hooks tell Zerre about handoffs, not prompts or code. Calendar access, if you grant it, tells Zerre when you’re busy, not what the meeting is. Time per app during a block is app names and minutes, and you can turn it off. Its history stays on your Mac. The app has no account or usage telemetry. This website counts visits and a few clicks; the details are on the privacy page.</p><p class="privacy-fine">Notes you choose to write on Zerre’s board are saved locally so it can show them again.</p><a class="inline-link" href="/privacy">Read the full privacy details <span aria-hidden="true">↗</span></a></div></div></section>
+    <section class="quiet-section section-pad" aria-labelledby="quiet-title">
+      <div class="wrap quiet-grid"><div class="quiet-illustration" aria-hidden="true"><div class="quiet-moon">☾</div><div class="quiet-cloud quiet-cloud-one"></div><div class="quiet-cloud quiet-cloud-two"></div><div class="quiet-small-window">meeting in progress <span>zzz</span></div><img class="quiet-creature" src="/assets/sprites/portrait-sleep.png" alt="" width="171" height="144"></div><div class="quiet-copy"><div class="section-label"><span class="label-number">05 /</span> CALM BY DEFAULT</div><h2 id="quiet-title" data-analytics-section="calm">A companion that knows when to <em>hush.</em></h2><p>Zerre has a small daily nudge budget. It stays quiet during focus blocks, at night, and during meetings when you connect Calendar. Breaks are its turn too: tea for a short one, a nap for a long one, whether or not you take yours. Ignore it for a while and it gets sleepy, never punishing.</p><a class="inline-link" href="/privacy">See exactly what it notices <span aria-hidden="true">↗</span></a></div></div>
+    </section>
 
-    <section class="download-section section-pad" id="download" aria-labelledby="download-title"><div class="wrap download-card"><div class="download-doodle" aria-hidden="true"><img src="/assets/sprites/particle.star.png" alt="" width="24" height="24"></div><div><div class="section-label"><span class="label-number">06 /</span> YOUR NOTCH IS WAITING</div><h2 id="download-title" data-analytics-section="download">Give your notch a tenant.</h2><p>Zerre for Mac is free. Download it, start a block, and see what grows beside you.</p><div class="download-actions"><a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.9.0/Zerre-0.9.0.dmg">Download Zerre <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/releases">Release notes</a></div><div class="install-box" id="install">
+    <section class="privacy-section section-pad" aria-labelledby="privacy-title"><div class="wrap privacy-layout"><div class="privacy-stamp" aria-hidden="true"><span>YOUR MAC<br>YOUR LITTLE WORLD</span><b><img src="/assets/sprites/mark.zerre.png" alt="" width="64" height="64"></b></div><div><div class="section-label"><span class="label-number">06 /</span> MADE TO STAY YOURS</div><h2 id="privacy-title" data-analytics-section="privacy">It notices that things happened. <em>It does not read your work.</em></h2><p>Agent hooks tell Zerre about handoffs, not prompts or code. Calendar access, if you grant it, tells Zerre when you’re busy, not what the meeting is. Time per app during a block is app names and minutes, and you can turn it off. Its history stays on your Mac. The app has no account or usage telemetry. This website counts visits and a few clicks; the details are on the privacy page.</p><p class="privacy-fine">Notes you choose to write on Zerre’s board are saved locally so it can show them again.</p><a class="inline-link" href="/privacy">Read the full privacy details <span aria-hidden="true">↗</span></a></div></div></section>
+
+    <section class="download-section section-pad" id="download" aria-labelledby="download-title"><div class="wrap download-card"><div class="download-doodle" aria-hidden="true"><img src="/assets/sprites/particle.star.png" alt="" width="24" height="24"></div><div><div class="section-label"><span class="label-number">07 /</span> YOUR NOTCH IS WAITING</div><h2 id="download-title" data-analytics-section="download">Give your notch a tenant.</h2><p>Zerre for Mac is free. Download it, start a block, and see what grows beside you.</p><div class="download-actions"><a class="button button-primary" data-release-download href="https://github.com/darkbringer1/zerre/releases/download/v0.9.0/Zerre-0.9.0.dmg">Download Zerre <span aria-hidden="true">↗</span></a><a class="button button-outline" href="/releases">Release notes</a></div><div class="install-box" id="install">
             <div class="install-bar"><span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span><span>or install from Terminal</span></div>
             <div class="install-tabs" role="tablist" aria-label="Install method">
               <button type="button" role="tab" id="install-tab-brew" aria-selected="true" aria-controls="install-panel" data-install="brew">Homebrew</button>
